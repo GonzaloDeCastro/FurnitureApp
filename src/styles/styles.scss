@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @import './base/settings';
 @import './base/base';
-=======
-html,
-body {
-}
->>>>>>> ed4d5ffe838319d38bab0664fbcec9d40e906968
+@import './components/auth';
+@import './components/buttons';
