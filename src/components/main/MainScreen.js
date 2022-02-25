@@ -1,9 +1,16 @@
 import React from 'react';
+import { Sidebar } from './Sidebar';
 
-export const MainScreen = () => {
+export const MainScreen = ({ children }) => {
 	return (
-		<div>
-			<h1>MainScreen</h1>
-		</div>
+		<>
+			<div className="main__content">
+				<Sidebar />
+
+				<main>
+					<h1>Main content</h1>
+				</main>
+			</div>
+		</>
 	);
 };

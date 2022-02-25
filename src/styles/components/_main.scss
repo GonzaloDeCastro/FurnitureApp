@@ -1,0 +1,23 @@
+.main__content {
+	display: flex;
+}
+
+.main__sidebar {
+	background-color: $dark-grey;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 450px;
+}
+
+.main_sidebar-navbar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.main_sidebar-navbar h3 {
+	font-weight: lighter;
+}
