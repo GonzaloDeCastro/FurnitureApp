@@ -4,7 +4,7 @@ const Footer = (props) => {
 	return (
 		<>
 			<footer className="Footer">
-				<p>Footer</p>
+				<p>&copy; Copyright 2022 Gonzalo De Castro</p>
 			</footer>
 		</>
 	);

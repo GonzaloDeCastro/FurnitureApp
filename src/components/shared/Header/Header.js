@@ -4,7 +4,7 @@ const Header = (props) => {
 	return (
 		<>
 			<div className="containerHeader">
-				<h1>Header</h1>
+				<h1>Furniture App</h1>
 			</div>
 		</>
 	);

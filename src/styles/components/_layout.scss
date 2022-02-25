@@ -6,7 +6,18 @@ body {
 	background-color: rgb(247, 249, 247);
 }
 
-.containerContent {
-	display: flex;
-	flex-direction: row;
+@media screen and (max-width: 1920px) {
+	.containerContent {
+		height: 80.6vh;
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+@media screen and (max-width: 1366px) {
+	.containerContent {
+		height: 77.6vh;
+		display: flex;
+		flex-direction: row;
+	}
 }

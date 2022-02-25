@@ -22,6 +22,7 @@ export const AppRouter = () => {
 							<DashboardRoutes />
 						</Layout>
 					</Route>
+
 					<Redirect to="/auth/login" />
 				</Switch>
 			</div>
