@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Sidebar = () => {
 	return (
@@ -12,6 +13,19 @@ export const Sidebar = () => {
 				</h3>
 				<button className="btn">Logout</button>
 			</div>
+
+			<Link to="/private/home" className="linkLight">
+				{' '}
+				Home
+			</Link>
+			<Link to="/private/providers" className="linkLight">
+				{' '}
+				Providers
+			</Link>
+			<Link to="/private/products" className="linkLight">
+				{' '}
+				Products
+			</Link>
 		</aside>
 	);
 };

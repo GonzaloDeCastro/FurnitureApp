@@ -1,0 +1,31 @@
+.containerSection {
+	width: 80%;
+	padding: 10px 20px;
+}
+
+table {
+	background-color: rgb(255, 255, 255);
+	margin-top: 15px;
+	text-align: center;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	padding: 12px;
+}
+
+thead {
+	background-color: #264d96;
+	color: white;
+}
+
+.delete {
+	color: rgb(255, 0, 0);
+}
+
+.delete,
+.edit:hover {
+	cursor: pointer;
+}
