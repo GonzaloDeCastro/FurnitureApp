@@ -13,19 +13,17 @@ export const Sidebar = () => {
 				</h3>
 				<button className="btn">Logout</button>
 			</div>
-
-			<Link to="/private/home" className="linkLight">
-				{' '}
-				Home
-			</Link>
-			<Link to="/private/providers" className="linkLight">
-				{' '}
-				Providers
-			</Link>
-			<Link to="/private/products" className="linkLight">
-				{' '}
-				Products
-			</Link>
+			<div className="main_menu_sidebar-navbar">
+				<Link to="/private/home" className="linkLight">
+					<h3>Home</h3>
+				</Link>
+				<Link to="/private/providers" className="linkLight">
+					<h3>Providers</h3>
+				</Link>
+				<Link to="/private/products" className="linkLight">
+					<h3>Products</h3>
+				</Link>
+			</div>
 		</aside>
 	);
 };

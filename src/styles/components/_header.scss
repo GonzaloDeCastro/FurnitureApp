@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(33, 1, 36);
+	background-color: darken($color: $primary, $amount: 20);
 	color: antiquewhite;
 	height: 80px;
 }

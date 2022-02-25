@@ -8,7 +8,6 @@ import {
 import { Layout } from '../components/shared/Layout/Layout';
 
 import { AuthRouter } from './AuthRouter';
-//import { MainScreen } from '../components/main/MainScreen';
 import { DashboardRoutes } from './DashboardRoutes';
 
 export const AppRouter = () => {
@@ -17,7 +16,7 @@ export const AppRouter = () => {
 			<div>
 				<Switch>
 					<Route path="/auth" component={AuthRouter} />
-					{/* <Route path="/private" component={DashboardRoutes} /> */}
+
 					<Route path="/private">
 						<Layout>
 							<DashboardRoutes />

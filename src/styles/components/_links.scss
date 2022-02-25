@@ -9,7 +9,9 @@
 .linkLight {
 	color: $light-grey;
 	text-decoration: none;
+
+	transition: color 0.3s ease;
 	&:hover {
-		text-decoration: underline;
+		color: darken($color: $primary, $amount: 20);
 	}
 }
