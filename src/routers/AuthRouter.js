@@ -5,7 +5,7 @@ import { RegisterScreen } from '../components/auth/RegisterScreen';
 import Footer from '../components/shared/Footer/Footer';
 export const AuthRouter = () => {
 	return (
-		<div className="body">
+		<div className="container__auth__main">
 			<div className="auth__main">
 				<div className="auth__box-container">
 					<Switch>

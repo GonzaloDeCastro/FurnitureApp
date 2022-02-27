@@ -1,10 +1,14 @@
+.container__auth__main {
+	height: 100vh;
+}
+
 .auth__main {
 	align-items: center;
 	background-color: $primary;
 	display: flex;
 	justify-content: center;
 	margin: 0px;
-	height: 100vh;
+	height: 94%;
 	width: 100vw;
 }
 
