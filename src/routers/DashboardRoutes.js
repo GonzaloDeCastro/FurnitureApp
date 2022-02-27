@@ -8,10 +8,10 @@ export const DashboardRoutes = () => {
 	return (
 		<>
 			<Switch>
-				<Route exact path="/private/main" component={Home} />
 				<Route path="/private/providers" component={Providers} />
 				<Route path="/private/products" component={Products} />
-				<Redirect to="/private/main" />
+				<Route path="/private/home" component={Home} />
+				<Redirect to="/private/home" />
 			</Switch>
 		</>
 	);

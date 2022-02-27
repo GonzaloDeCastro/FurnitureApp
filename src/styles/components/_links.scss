@@ -15,3 +15,13 @@
 		color: darken($color: $primary, $amount: 20);
 	}
 }
+
+.linkLight.active {
+	color: darken($color: $primary, $amount: 20);
+	text-decoration: none;
+
+	transition: color 0.3s ease;
+	&:hover {
+		color: darken($color: $primary, $amount: 20);
+	}
+}
