@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { startLoginEmailPassword } from '../../actions/auth';
 import validator from 'validator';
@@ -8,7 +8,7 @@ import { removeError, setError } from '../../actions/ui';
 
 export const LoginScreen = () => {
 	const dispatch = useDispatch();
-
+	const { msgError } = useSelector((state) => state.ui);
 	const [formValue, handleInputChange] = useForm({
 		email: 'gonzalodecastro1@gmail.com',
 		password: '123456',
@@ -41,6 +41,8 @@ export const LoginScreen = () => {
 			<h3 className="auth__title">Login</h3>
 
 			<form onSubmit={handleLogin}>
+				{msgError && <div className="auth__alert-error">{msgError}</div>}
+
 				<input
 					type="text"
 					placeholder="Email"
