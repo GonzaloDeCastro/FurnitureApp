@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { startLoginEmailPassword } from '../../actions/auth';
 import validator from 'validator';
 import { useForm } from '../../hooks/useForm';
+import { removeError, setError } from '../../actions/ui';
 
 export const LoginScreen = () => {
 	const dispatch = useDispatch();
@@ -25,13 +26,14 @@ export const LoginScreen = () => {
 
 	const isFormValid = () => {
 		if (!validator.isEmail(email)) {
-			console.log('Email is not invalid');
+			dispatch(setError('Email is not invalid'));
 			return false;
 		} else if (password.length < 5) {
-			console.log('Password should be at least 6 characters');
+			dispatch(setError('Password should be at least 6 characters'));
+
 			return false;
 		}
-
+		dispatch(removeError());
 		return true;
 	};
 	return (
