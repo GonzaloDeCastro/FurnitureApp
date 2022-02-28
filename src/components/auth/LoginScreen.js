@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { startLoginEmailPassword } from '../../actions/auth';
+import validator from 'validator';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
@@ -16,7 +17,22 @@ export const LoginScreen = () => {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-		dispatch(startLoginEmailPassword(email, password));
+		if (isFormValid()) {
+			dispatch(startLoginEmailPassword(email, password));
+			console.log('Formulario correcto');
+		}
+	};
+
+	const isFormValid = () => {
+		if (!validator.isEmail(email)) {
+			console.log('Email is not invalid');
+			return false;
+		} else if (password.length < 5) {
+			console.log('Password should be at least 6 characters');
+			return false;
+		}
+
+		return true;
 	};
 	return (
 		<>
