@@ -9,6 +9,8 @@ import { removeError, setError } from '../../actions/ui';
 export const LoginScreen = () => {
 	const dispatch = useDispatch();
 	const { msgError } = useSelector((state) => state.ui);
+	const { loading } = useSelector((state) => state.ui);
+
 	const [formValue, handleInputChange] = useForm({
 		email: 'gonzalodecastro1@gmail.com',
 		password: '123456',
@@ -41,6 +43,7 @@ export const LoginScreen = () => {
 			<h3 className="auth__title">Login</h3>
 
 			<form onSubmit={handleLogin}>
+				{loading && <div className="auth__alert-loading">Loading...</div>}
 				{msgError && <div className="auth__alert-error">{msgError}</div>}
 
 				<input
@@ -62,7 +65,11 @@ export const LoginScreen = () => {
 					value={password}
 				/>
 
-				<button type="submit" className="btn btn-primary btn-block mb-5">
+				<button
+					type="submit"
+					className="btn btn-primary btn-block mb-5"
+					disabled={loading}
+				>
 					Login
 				</button>
 
