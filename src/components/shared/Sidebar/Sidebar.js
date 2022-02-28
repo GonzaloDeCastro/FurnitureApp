@@ -1,7 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { startLogout } from '../../../actions/auth';
 
 export const Sidebar = () => {
+	const dispatch = useDispatch();
+	const handleLogout = () => {
+		dispatch(startLogout());
+	};
 	return (
 		<aside className="main__sidebar">
 			<div className="main_sidebar-navbar">
@@ -11,7 +17,9 @@ export const Sidebar = () => {
 						<span> Gonzalo</span>
 					</h3>
 				</h3>
-				<button className="btn">Logout</button>
+				<button className="btn" onClick={handleLogout}>
+					Logout
+				</button>
 			</div>
 			<div className="main_menu_sidebar-navbar">
 				<NavLink to="/private/home" className="linkLight">
