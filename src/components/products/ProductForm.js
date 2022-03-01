@@ -91,7 +91,7 @@ export const ProductForm = (props) => {
 							onChange={(e) => setBrand(e.target.value)}
 							value={brand}
 						/>
-						<button className="btn btn-success" type="submit">
+						<button className="btn-success" type="submit">
 							Confirm
 						</button>
 					</form>

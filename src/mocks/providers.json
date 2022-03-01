@@ -1,0 +1,20 @@
+{
+  "providers": [
+    {
+      "id": "8v8d6s7s-1x3l-2j3j-9b2d-8xh2h34h5h5s",
+      "company": "Teraflop S.A",
+      "firstName": "Lucas",
+      "lastName": "Delmonte",
+      "email": "delmontelucas678@gmail.com",
+      "phone": "3476390432"
+    },
+    {
+      "id": "7x82x7g7-8c5h-9b2d-2j3j-1c835f37d45e",
+      "company": "Ryzen S.A",
+      "firstName": "Luis",
+      "lastName": "Diaz",
+      "email": "luisdiaz@gmail.com",
+      "phone": "3476229421"
+    }
+  ]
+}
