@@ -6,6 +6,8 @@ import { Layout } from '../components/shared/Layout/Layout';
 import { firebase } from '../firebase/firebase-config';
 import { AuthRouter } from './AuthRouter';
 import { DashboardRoutes } from './DashboardRoutes';
+import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 export const AppRouter = () => {
 	const dispatch = useDispatch();
@@ -41,13 +43,13 @@ export const AppRouter = () => {
 		<Router>
 			<div>
 				<Switch>
-					<Route path="/auth" component={AuthRouter} />
+					<PublicRoute isAuthenticated={isLoggedIn} path="/auth" component={AuthRouter} />
 
-					<Route path="/private">
-						<Layout>
-							<DashboardRoutes />
-						</Layout>
-					</Route>
+					<PrivateRoute
+						isAuthenticated={isLoggedIn}
+						path="/private"
+						component={DashboardRoutes}
+					/>
 
 					<Redirect to="/auth/login" />
 				</Switch>
