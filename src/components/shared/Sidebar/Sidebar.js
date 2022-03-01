@@ -1,9 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { startLogout } from '../../../actions/auth';
 
 export const Sidebar = () => {
+	const { name } = useSelector((state) => state.auth);
+
 	const dispatch = useDispatch();
 	const handleLogout = () => {
 		dispatch(startLogout());
@@ -14,7 +16,7 @@ export const Sidebar = () => {
 				<h3>
 					<h3 className="mt-5">
 						<i className="far fa-moon" />
-						<span> Gonzalo</span>
+						<span> {name}</span>
 					</h3>
 				</h3>
 				<button className="btn" onClick={handleLogout}>

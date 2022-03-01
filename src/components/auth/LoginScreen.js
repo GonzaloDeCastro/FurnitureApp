@@ -22,7 +22,6 @@ export const LoginScreen = () => {
 		e.preventDefault();
 		if (isFormValid()) {
 			dispatch(startLoginEmailPassword(email, password));
-			console.log('Formulario correcto');
 		}
 	};
 
@@ -45,6 +44,7 @@ export const LoginScreen = () => {
 			<form onSubmit={handleLogin}>
 				{loading && <div className="auth__alert-loading">Loading...</div>}
 				{msgError && <div className="auth__alert-error">{msgError}</div>}
+				{}
 
 				<input
 					type="text"

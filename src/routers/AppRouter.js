@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 import { login } from '../actions/auth';
-import { Layout } from '../components/shared/Layout/Layout';
 import { firebase } from '../firebase/firebase-config';
 import { AuthRouter } from './AuthRouter';
 import { DashboardRoutes } from './DashboardRoutes';

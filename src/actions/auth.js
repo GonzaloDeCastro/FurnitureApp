@@ -1,6 +1,7 @@
 import { types } from '../types/types';
 import { firebase } from '../firebase/firebase-config';
 import { finishLoading, startLoading } from './ui';
+import Swal from 'sweetalert2';
 
 export const startLoginEmailPassword = (email, password) => {
 	return (dispatch) => {
@@ -14,7 +15,7 @@ export const startLoginEmailPassword = (email, password) => {
 			})
 			.catch((e) => {
 				dispatch(finishLoading());
-				console.log(e);
+				Swal.fire('Fail Login', e.message, 'error');
 			});
 	};
 };
@@ -33,6 +34,7 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
 			.catch((e) => {
 				console.log(e);
 				dispatch(finishLoading());
+				Swal.fire('Fail Register', e.message, 'error');
 			});
 	};
 };
