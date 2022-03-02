@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { startLogout } from '../../../actions/auth';
+import { startLogout } from '../../../redux/actions/auth';
 
 export const Sidebar = () => {
 	const { name } = useSelector((state) => state.auth);

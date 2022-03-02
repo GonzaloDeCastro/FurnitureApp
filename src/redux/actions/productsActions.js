@@ -5,7 +5,7 @@ import {
 	EDIT_PRODUCT,
 	GET_PRODUCTS,
 	REMOVE_PRODUCT,
-} from '../types/productsTypes';
+} from '../../types/productsTypes';
 
 export const creatorAddProduct = (product) => {
 	product.id = uuidv4();

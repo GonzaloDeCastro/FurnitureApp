@@ -3,7 +3,7 @@ import {
 	EDIT_PROVIDER,
 	GET_PROVIDERS,
 	REMOVE_PROVIDER,
-} from '../types/providersTypes';
+} from '../../types/providersTypes';
 
 const initialState = {
 	list: [],

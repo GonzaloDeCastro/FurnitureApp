@@ -4,7 +4,7 @@ import { Header } from './Header';
 import { ProvidersList } from './ProviderList';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
-import { creatorAsyncGet } from '../../actions/providersActions';
+import { creatorAsyncGet } from '../../redux/actions/providersActions';
 
 export const Providers = () => {
 	const [showForm, setShowForm] = useState({ show: false, mode: 'Add' });
@@ -22,7 +22,7 @@ export const Providers = () => {
 	useEffect(() => {
 		dispatch(creatorAsyncGet());
 		return () => {};
-	}, []);
+	}, [dispatch]);
 
 	const handleEditClick = (provider) => {
 		setProviderToEdit(provider);

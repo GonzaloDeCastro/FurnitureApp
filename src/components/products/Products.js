@@ -4,7 +4,7 @@ import { Header } from './Header';
 import { ProductsList } from './ProductsList';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
-import { getProductsAsyncCreator } from '../../actions/productsActions';
+import { getProductsAsyncCreator } from '../../redux/actions/productsActions';
 
 export const Products = () => {
 	//const { list, productSelected } = useSelector((state) => state.products);
@@ -17,7 +17,7 @@ export const Products = () => {
 	useEffect(() => {
 		dispatch(getProductsAsyncCreator());
 		return () => {};
-	}, []);
+	}, [dispatch]);
 
 	useEffect(() => {
 		if (productSelected) {

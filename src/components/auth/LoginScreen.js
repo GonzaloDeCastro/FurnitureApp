@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { startLoginEmailPassword } from '../../actions/auth';
 import validator from 'validator';
 import { useForm } from '../../hooks/useForm';
-import { removeError, setError } from '../../actions/ui';
+import { removeError, setError } from '../../redux/actions/ui';
+import { startLoginEmailPassword } from '../../redux/actions/auth';
 
 export const LoginScreen = () => {
 	const dispatch = useDispatch();
@@ -12,8 +12,8 @@ export const LoginScreen = () => {
 	const { loading } = useSelector((state) => state.ui);
 
 	const [formValue, handleInputChange] = useForm({
-		email: 'almablanca@gmail.com',
-		password: '123456',
+		email: '',
+		password: '',
 	});
 
 	const { email, password } = formValue;

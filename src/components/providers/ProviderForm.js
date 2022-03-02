@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
-import { creatorAsyncAdd, creatorAsyncEdit } from '../../actions/providersActions';
+import { creatorAsyncAdd, creatorAsyncEdit } from '../../redux/actions/providersActions';
 
 export const ProviderForm = (props) => {
 	const dispatch = useDispatch();

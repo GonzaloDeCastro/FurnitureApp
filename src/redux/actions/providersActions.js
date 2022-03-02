@@ -5,7 +5,7 @@ import {
 	EDIT_PROVIDER,
 	GET_PROVIDERS,
 	REMOVE_PROVIDER,
-} from '../types/providersTypes';
+} from '../../types/providersTypes';
 
 export const creatorAddProvider = (provider) => {
 	//provider.id = uuidv4();

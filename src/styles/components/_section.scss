@@ -17,7 +17,7 @@ td {
 }
 
 thead {
-	background-color: #264d96;
+	background-color: #7c3494;
 	color: white;
 }
 
@@ -28,4 +28,9 @@ thead {
 .delete,
 .edit:hover {
 	cursor: pointer;
+}
+
+.Edit_Delete {
+	display: flex;
+	justify-content: space-around;
 }

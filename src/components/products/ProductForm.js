@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
-import { addAsyncCreator, editAsyncCreator } from '../../actions/productsActions';
+import { addAsyncCreator, editAsyncCreator } from '../../redux/actions/productsActions';
 
 export const ProductForm = (props) => {
 	const dispatch = useDispatch();

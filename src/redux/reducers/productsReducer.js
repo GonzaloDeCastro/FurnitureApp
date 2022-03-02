@@ -3,7 +3,7 @@ import {
 	EDIT_PRODUCT,
 	GET_PRODUCTS,
 	REMOVE_PRODUCT,
-} from '../types/productsTypes';
+} from '../../types/productsTypes';
 
 const initialState = {
 	list: [],
