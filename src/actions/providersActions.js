@@ -41,7 +41,7 @@ export const creatorAsyncAdd = (provider) => {
 	return async (dispatch) => {
 		try {
 			const res = await axios.post(
-				'https://abm-heroku-parcial.herokuapp.com/api/providers/',
+				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/`,
 				provider
 			);
 			if (res.status === 201) {
@@ -56,7 +56,7 @@ export const creatorAsyncRemove = (providerId) => {
 	return async (dispatch) => {
 		try {
 			const res = await axios.delete(
-				`https://abm-heroku-parcial.herokuapp.com/api/providers/${providerId}`
+				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${providerId}`
 			);
 			if (res.status === 202) {
 				const action = creatorRemoveProvider(providerId);
@@ -70,7 +70,7 @@ export const creatorAsyncGet = () => {
 	return async (dispatch) => {
 		try {
 			const res = await axios.get(
-				'https://abm-heroku-parcial.herokuapp.com/api/providers/all'
+				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/all`
 			);
 			if (res.status === 200) {
 				const action = creatorGetAllProviders(res.data.data);
@@ -84,7 +84,7 @@ export const creatorAsyncEdit = (provider) => {
 	return async (dispatch) => {
 		try {
 			const res = await axios.put(
-				`https://abm-heroku-parcial.herokuapp.com/api/providers/${provider._id}`,
+				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${provider._id}`,
 				provider
 			);
 			if (res.status === 200 || res.status === 202) {

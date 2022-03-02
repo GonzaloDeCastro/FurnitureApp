@@ -107,7 +107,7 @@ export const ProviderForm = (props) => {
 							onChange={(e) => setPhone(e.target.value)}
 							value={phone}
 						/>
-						<button className="btn btn-success" type="submit">
+						<button className="btn-success" type="submit">
 							Confirm
 						</button>
 					</form>
