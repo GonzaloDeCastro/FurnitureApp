@@ -14,11 +14,26 @@ export const ProviderItem = (props) => {
 	return (
 		<>
 			<tr>
-				<td>{providerToShow.company}</td>
-				<td>{providerToShow.firstName}</td>
-				<td>{providerToShow.lastName}</td>
-				<td>{providerToShow.email}</td>
-				<td>{providerToShow.phone}</td>
+				<td>
+					{providerToShow.company}
+					<hr />
+				</td>
+				<td>
+					{providerToShow.firstName}
+					<hr />
+				</td>
+				<td>
+					{providerToShow.lastName}
+					<hr />
+				</td>
+				<td>
+					{providerToShow.email}
+					<hr />
+				</td>
+				<td>
+					{providerToShow.phone}
+					<hr />
+				</td>
 				<td>
 					<div className="Edit_Delete">
 						<div>
@@ -34,6 +49,7 @@ export const ProviderItem = (props) => {
 							/>
 						</div>
 					</div>
+					<hr />
 				</td>
 			</tr>
 		</>

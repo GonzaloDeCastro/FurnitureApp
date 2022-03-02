@@ -16,13 +16,11 @@
 	color: white;
 	display: flex;
 	flex-direction: column;
-	/* height: 80.6vh; */
-	padding-left: 10px;
-	padding-right: 10px;
 	width: 250px;
 }
 
 .main_sidebar-navbar {
+	background-color: darken($color: $primary, $amount: 10);
 	display: flex;
 	justify-content: space-between;
 }
