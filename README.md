@@ -44,9 +44,6 @@ We start the server with the command "npm start"
 Enjoy the App
 ```
 
-6. Try my App in Heroku
+6. Try my App in Heroku, click [Here](https://furniture-app-web.herokuapp.com)
 
-```
-Click [Here](https://furniture-app-web.herokuapp.com)
-```
    
