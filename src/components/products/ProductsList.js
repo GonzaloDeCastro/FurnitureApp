@@ -17,7 +17,7 @@ export const ProductsList = (props) => {
 				</thead>
 				{productList.map((product) => (
 					<ProductItem
-						key={product.id}
+						key={product._id}
 						productToShow={product}
 						onDelete={onDelete}
 						onEdit={onEdit}

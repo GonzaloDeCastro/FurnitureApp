@@ -32,21 +32,18 @@ Set "git clone https://github.com/GonzaloDeCastro/FurnitureApp.git" in the shell
 We install the necessary packages to be able to run the system with "npm install"
 ```
 
-3. Move branch to firebase
-
-```
-Set "git checkout firebase"
-
-```
-
-5. npm start
+4. npm start
 
 ```
 We start the server with the command "npm start"
 ```
 
-6. Type in your browser "http://localhost:3000"
+5. Type in your browser "http://localhost:3000"
 
 ```
 Enjoy the App
 ```
+
+6. Try my App in Heroku
+
+Click [Here](https://furniture-app-web.herokuapp.com)

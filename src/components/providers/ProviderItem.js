@@ -12,7 +12,7 @@ export const ProviderItem = (props) => {
 	};
 
 	return (
-		<>
+		<tbody>
 			<tr>
 				<td>
 					{providerToShow.company}
@@ -52,6 +52,6 @@ export const ProviderItem = (props) => {
 					<hr />
 				</td>
 			</tr>
-		</>
+		</tbody>
 	);
 };
