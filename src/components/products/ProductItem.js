@@ -13,40 +13,42 @@ export const ProductItem = (props) => {
 	};
 
 	return (
-		<tr>
-			<td>
-				{productToShow.name}
-				<hr />
-			</td>
-			<td>
-				{productToShow.description}
-				<hr />
-			</td>
-			<td>
-				{productToShow.price}
-				<hr />
-			</td>
-			<td>
-				{productToShow.brand}
-				<hr />
-			</td>
-			<td>
-				<div className="Edit_Delete">
-					<div>
-						<EditIcon
-							onClick={() => onEdit(productToShow)}
-							style={{ cursor: 'pointer', color: '#944ca8' }}
-						/>
+		<tbody>
+			<tr>
+				<td>
+					{productToShow.name}
+					<hr />
+				</td>
+				<td>
+					{productToShow.description}
+					<hr />
+				</td>
+				<td>
+					{productToShow.price}
+					<hr />
+				</td>
+				<td>
+					{productToShow.brand}
+					<hr />
+				</td>
+				<td>
+					<div className="Edit_Delete">
+						<div>
+							<EditIcon
+								onClick={() => onEdit(productToShow)}
+								style={{ cursor: 'pointer', color: '#944ca8' }}
+							/>
+						</div>
+						<div>
+							<DeleteIcon
+								onClick={handleDelete}
+								style={{ cursor: 'pointer', color: '#7c3494' }}
+							/>
+						</div>
 					</div>
-					<div>
-						<DeleteIcon
-							onClick={handleDelete}
-							style={{ cursor: 'pointer', color: '#7c3494' }}
-						/>
-					</div>
-				</div>
-				<hr />
-			</td>
-		</tr>
+					<hr />
+				</td>
+			</tr>
+		</tbody>
 	);
 };
