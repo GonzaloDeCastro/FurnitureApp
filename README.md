@@ -46,4 +46,7 @@ Enjoy the App
 
 6. Try my App in Heroku
 
+```
 Click [Here](https://furniture-app-web.herokuapp.com)
+```
+   
