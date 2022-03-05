@@ -4,6 +4,13 @@
 	padding: 10px 20px;
 }
 
+.homeContainer {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 table {
 	background-color: rgb(255, 255, 255);
 	margin-top: 15px;
@@ -20,10 +27,6 @@ td {
 thead {
 	background-color: #7c3494;
 	color: white;
-}
-
-.delete {
-	color: rgb(255, 0, 0);
 }
 
 .delete,

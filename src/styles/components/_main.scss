@@ -1,16 +1,9 @@
-.homeContainer {
-	height: 100%;
-	margin-top: 5%;
+.containerLayout {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
+	height: 100%;
+	width: 100vw;
 }
-
-.main__content {
-	display: flex;
-}
-
 .main__sidebar {
 	background-color: $primary;
 	color: white;

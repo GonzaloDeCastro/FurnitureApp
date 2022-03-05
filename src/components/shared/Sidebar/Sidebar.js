@@ -24,13 +24,13 @@ export const Sidebar = () => {
 			</div>
 			<div className="main_menu_sidebar-navbar">
 				<NavLink to="/private/home" className="linkLight">
-					<h3>Home</h3>
+					Home
 				</NavLink>
 				<NavLink to="/private/providers" className="linkLight">
-					<h3>Providers</h3>
+					Providers
 				</NavLink>
 				<NavLink to="/private/products" className="linkLight">
-					<h3>Products</h3>
+					Products
 				</NavLink>
 			</div>
 		</aside>

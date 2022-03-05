@@ -15,22 +15,10 @@ export const ProductItem = (props) => {
 	return (
 		<tbody>
 			<tr>
-				<td>
-					{productToShow.name}
-					<hr />
-				</td>
-				<td>
-					{productToShow.description}
-					<hr />
-				</td>
-				<td>
-					{productToShow.price}
-					<hr />
-				</td>
-				<td>
-					{productToShow.brand}
-					<hr />
-				</td>
+				<td>{productToShow.name}</td>
+				<td>{productToShow.description}</td>
+				<td>{productToShow.price}</td>
+				<td>{productToShow.brand}</td>
 				<td>
 					<div className="Edit_Delete">
 						<div>
@@ -46,7 +34,6 @@ export const ProductItem = (props) => {
 							/>
 						</div>
 					</div>
-					<hr />
 				</td>
 			</tr>
 		</tbody>

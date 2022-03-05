@@ -7,13 +7,13 @@ import { Sidebar } from '../Sidebar/Sidebar';
 
 export const Layout = ({ children }) => {
 	return (
-		<>
+		<div className="containerLayout">
 			<Header />
 			<div className="containerContent">
 				<Sidebar />
 				<Section container={children} />
 			</div>
 			<Footer />
-		</>
+		</div>
 	);
 };

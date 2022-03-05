@@ -93,12 +93,12 @@ export const RegisterScreen = () => {
 
 				<button
 					type="submit"
-					className="btn btn-primary btn-block mb-5"
+					className="btn btn-primary btn-block mb-4"
 					disabled={loading}
 				>
 					Register
 				</button>
-				<button onClick={reset} type="submit" className="btn btn-primary btn-block mb-5">
+				<button onClick={reset} type="submit" className="btn btn-primary btn-block mb-4">
 					Cancel
 				</button>
 
