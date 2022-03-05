@@ -30,20 +30,28 @@ Set "git clone https://github.com/GonzaloDeCastro/FurnitureApp.git" in the shell
 
 ```
 We install the necessary packages to be able to run the system with "npm install"
+
 ```
 
-4. npm start
+4. create file ".env" in your root folder with the following content
+
+```
+REACT_APP_BACKEND_URL_PORT = https://abm-heroku-decastro-delmonte.herokuapp.com
+
+this is my backend in node ;)
+
+```
+
+5. npm start
 
 ```
 We start the server with the command "npm start"
 ```
 
-5. Type in your browser "http://localhost:3000"
+6. Type in your browser "http://localhost:3000"
 
 ```
 Enjoy the App
 ```
 
-6. Try my App in Heroku, click [Here](https://furniture-app-web.herokuapp.com)
-
-   
+7. Try my App in Heroku, click [Here](https://furniture-app-web.herokuapp.com)
