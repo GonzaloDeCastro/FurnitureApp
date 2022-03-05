@@ -7,7 +7,7 @@ export const ProductItem = (props) => {
 	const dispatch = useDispatch();
 	const { productToShow, onEdit } = props;
 
-	const handleDelete = (id) => {
+	const handleDelete = (_id) => {
 		const action = deleteAsyncCreator(productToShow._id);
 		dispatch(action);
 	};
