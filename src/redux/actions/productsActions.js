@@ -66,11 +66,12 @@ export const addAsyncCreator = (product) => {
 	};
 };
 
-export const editAsyncCreator = (productId) => {
+export const editAsyncCreator = (product) => {
 	return async (dispatch) => {
 		try {
 			const response = await axios.put(
-				`${process.env.REACT_APP_BACKEND_URL_PORT}/${productId}`
+				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${product._id}`,
+				product
 			);
 			console.log(response);
 			if (response.status === 200) {
@@ -86,7 +87,7 @@ export const getProductsAsyncCreator = () => {
 			const response = await axios.get(
 				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/all`
 			);
-			console.log(response);
+
 			if (response.status === 200) {
 				const action = getProducts(response.data.data);
 				dispatch(action);

@@ -28,7 +28,7 @@ export const ProviderForm = (props) => {
 		}
 		if (type === 'edit') {
 			const payloadProvider = {
-				id: provider.id,
+				id: provider._id,
 				company,
 				firstName,
 				lastName,
