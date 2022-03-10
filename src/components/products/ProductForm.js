@@ -3,13 +3,18 @@ import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
-import { addAsyncCreator, editAsyncCreator } from '../../redux/actions/productsActions';
+import {
+	addAsyncCreator,
+	editAsyncCreator,
+} from '../../redux/actions/productsActions';
 
 export const ProductForm = (props) => {
 	const dispatch = useDispatch();
 	const { type, product } = props;
 	const [name, setName] = useState(product ? product.name : '');
-	const [description, setDescription] = useState(product ? product.description : '');
+	const [description, setDescription] = useState(
+		product ? product.description : ''
+	);
 	const [price, setPrice] = useState(product ? product.price : '');
 	const [brand, setBrand] = useState(product ? product.brand : '');
 
@@ -32,7 +37,7 @@ export const ProductForm = (props) => {
 				price,
 				brand,
 			};
-			const action = editAsyncCreator(payloadProduct.id);
+			const action = editAsyncCreator(payloadProduct);
 			dispatch(action);
 		}
 		setName('');
@@ -50,7 +55,11 @@ export const ProductForm = (props) => {
 
 	return (
 		<>
-			<Button variant="primary" onClick={handleShow} className="btn btn-info ms-2">
+			<Button
+				variant="primary"
+				onClick={handleShow}
+				className="btn btn-info ms-2"
+			>
 				Launch modal
 			</Button>
 			<Modal show={show} onHide={handleClose}>

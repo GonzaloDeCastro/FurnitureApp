@@ -27,7 +27,7 @@ export const providersReducer = (state = initialState, action) => {
 			return {
 				...state,
 				list: state.list.map((provider) =>
-					provider._ === action.payload.providerId ? action.payload : provider
+					provider._id === action.payload._id ? action.payload : provider
 				),
 			};
 		case GET_PROVIDERS:
