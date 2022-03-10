@@ -61,7 +61,7 @@ export const creatorAsyncRemove = (providerId) => {
 			);
 			console.log(res.data.data._id);
 			if (res.status === 202) {
-				const action = creatorRemoveProvider(res.data);
+				const action = creatorRemoveProvider(providerId);
 				dispatch(action);
 			}
 		} catch (error) {}
