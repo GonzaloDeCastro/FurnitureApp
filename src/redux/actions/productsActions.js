@@ -70,8 +70,9 @@ export const editAsyncCreator = (product) => {
 	return async (dispatch) => {
 		try {
 			const response = await axios.put(
-				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${product._id}`,
-				product
+				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${product.id}`,
+				product,
+				console.log(product)
 			);
 			console.log(response);
 			if (response.status === 200) {

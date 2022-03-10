@@ -32,7 +32,7 @@ export const ProductForm = (props) => {
 				price,
 				brand,
 			};
-			const action = editAsyncCreator(payloadProduct.id);
+			const action = editAsyncCreator(payloadProduct);
 			dispatch(action);
 		}
 		setName('');
