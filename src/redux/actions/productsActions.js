@@ -71,12 +71,12 @@ export const editAsyncCreator = (product) => {
 		try {
 			const response = await axios.put(
 				`${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${product.id}`,
-				product,
-				console.log(product)
+
+				product
 			);
 			console.log(response);
 			if (response.status === 200) {
-				const action = creatorEditProduct(response.data.update);
+				const action = creatorEditProduct(response.data);
 				dispatch(action);
 			}
 		} catch (error) {}

@@ -27,7 +27,7 @@ export const productsReducer = (state = initialState, action) => {
 			return {
 				...state,
 				list: state.list.map((product) =>
-					product.id === action.payload._id ? action.payload : product
+					product._id === action.payload._id ? action.payload : product
 				),
 			};
 		case GET_PRODUCTS:
