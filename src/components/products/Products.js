@@ -46,7 +46,7 @@ export const Products = () => {
 	};
 
 	return (
-		<div className="m-3">
+		<div>
 			<Header
 				showProductForm={showForm}
 				setShowProductForm={setShowForm}

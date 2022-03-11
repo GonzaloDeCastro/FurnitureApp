@@ -9,8 +9,8 @@ export const ProvidersList = (props) => {
 				<thead>
 					<tr>
 						<th>Company</th>
-						<th>First name</th>
-						<th>Last name</th>
+						<th>FirstName</th>
+						<th>LastName</th>
 						<th>Email</th>
 						<th>Phone</th>
 						<th>Options</th>

@@ -45,7 +45,7 @@ export const Providers = () => {
 	};
 
 	return (
-		<div className="m-3">
+		<div>
 			<Header
 				showProviderForm={showForm}
 				setShowProviderForm={setShowForm}
