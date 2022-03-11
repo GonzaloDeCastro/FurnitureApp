@@ -4,7 +4,7 @@ import { ProviderItem } from './ProviderItem';
 export const ProvidersList = (props) => {
 	const { providerList, onDelete, onEdit } = props;
 	return (
-		<div className="tableResponsive">
+		<div className="table-responsive">
 			<table>
 				<thead>
 					<tr>

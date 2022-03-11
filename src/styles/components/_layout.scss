@@ -2,19 +2,24 @@
 	height: 100%;
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
-	align-content: space-around;
 	flex-direction: row;
 }
 
-.containerContent {
+.containerSideSection {
 	height: 100%;
 	width: 100%;
 	display: flex;
 }
 
 @media screen and (max-width: 900px) {
-	.containerContent {
+	#root {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.containerSideSection {
 		height: 100%;
 		width: 100%;
 		display: flex;

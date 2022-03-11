@@ -1,16 +1,16 @@
 .containerSection {
 	height: 100%;
 	width: 100%;
-	padding: 10px 20px;
+	padding: 5% 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .homeContainer {
-	margin-top: 21px;
-	padding-top: 50px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
 }
 
 table {
