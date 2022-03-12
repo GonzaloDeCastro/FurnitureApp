@@ -5,9 +5,9 @@ import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { addAsyncCreator, editAsyncCreator } from '../../redux/actions/productsActions';
 
-export const ProductForm = (props) => {
+export const ProductForm = ({ type, product }) => {
 	const dispatch = useDispatch();
-	const { type, product } = props;
+
 	const [name, setName] = useState(product ? product.name : '');
 	const [description, setDescription] = useState(product ? product.description : '');
 	const [price, setPrice] = useState(product ? product.price : '');

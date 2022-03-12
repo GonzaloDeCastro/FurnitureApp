@@ -3,9 +3,9 @@ import { FaTrash as DeleteIcon, FaPen as EditIcon } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { creatorAsyncRemove } from '../../redux/actions/providersActions';
 
-export const ProviderItem = (props) => {
+export const ProviderItem = ({ providerToShow, onEdit }) => {
 	const dispatch = useDispatch();
-	const { providerToShow, onEdit } = props;
+
 	const handleDelete = (id) => {
 		const action = creatorAsyncRemove(providerToShow._id);
 		dispatch(action);

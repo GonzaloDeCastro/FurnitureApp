@@ -3,9 +3,8 @@ import { FaTrash as DeleteIcon, FaPen as EditIcon } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { deleteAsyncCreator } from '../../redux/actions/productsActions';
 
-export const ProductItem = (props) => {
+export const ProductItem = ({ productToShow, onEdit }) => {
 	const dispatch = useDispatch();
-	const { productToShow, onEdit } = props;
 
 	const handleDelete = (_id) => {
 		const action = deleteAsyncCreator(productToShow._id);

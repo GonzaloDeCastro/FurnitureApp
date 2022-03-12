@@ -1,8 +1,7 @@
 import React from 'react';
 import { ProviderItem } from './ProviderItem';
 
-export const ProvidersList = (props) => {
-	const { providerList, onDelete, onEdit } = props;
+export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
 	return (
 		<div className="table-responsive">
 			<table>

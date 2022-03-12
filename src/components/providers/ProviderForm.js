@@ -6,9 +6,9 @@ import Modal from 'react-bootstrap/Modal';
 import { Button } from 'react-bootstrap';
 import { creatorAsyncAdd, creatorAsyncEdit } from '../../redux/actions/providersActions';
 
-export const ProviderForm = (props) => {
+export const ProviderForm = ({ type, provider }) => {
 	const dispatch = useDispatch();
-	const { type, provider } = props;
+
 	const [company, setCompany] = useState(provider ? provider.company : '');
 	const [firstName, setFirstName] = useState(provider ? provider.firstName : '');
 	const [lastName, setLastName] = useState(provider ? provider.lastName : '');
