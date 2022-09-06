@@ -45,7 +45,7 @@ export const creatorAsyncAdd = (provider) => {
   return async (dispatch) => {
     try {
       const res = await axios.post(
-        `https://furniture-app-web-backend.herokuapp.com/api/providers/`,
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/`,
         provider
       );
 
@@ -61,7 +61,7 @@ export const creatorAsyncRemove = (providerId) => {
   return async (dispatch) => {
     try {
       const res = await axios.delete(
-        `https://furniture-app-web-backend.herokuapp.com/api/providers/${providerId}`
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${providerId}`
       );
       console.log(res.data.data._id);
       if (res.status === 202) {
@@ -77,7 +77,7 @@ export const creatorAsyncEdit = (provider) => {
   return async (dispatch) => {
     try {
       const res = await axios.put(
-        `https://furniture-app-web-backend.herokuapp.com/api/providers/${provider.id}`,
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${provider.id}`,
         provider,
         console.log(provider)
       );
@@ -94,7 +94,7 @@ export const creatorAsyncGet = () => {
   return async (dispatch) => {
     try {
       const res = await axios.get(
-        `https://furniture-app-web-backend.herokuapp.com/api/providers/all`
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/all`
       );
       console.log(res.data.data);
       if (res.status === 200) {
