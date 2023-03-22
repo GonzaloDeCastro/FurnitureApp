@@ -13,22 +13,30 @@ export const Sidebar = () => {
   return (
     <aside className="main__sidebar">
       <div className="main_sidebar-navbar">
-        <i className="far fa-sun" />
-        <div style={{ marginRight: "1rem" }}>{name}</div>
+        <div>
+          <i className="far fa-sun" style={{ marginRight: "0.1rem" }} />
+          {name}
+        </div>
         <button className="btn" onClick={handleLogout}>
           Logout
         </button>
       </div>
       <div className="main_menu_sidebar-navbar">
-        <NavLink to="/private/home" className="linkLight">
-          Home
-        </NavLink>
-        <NavLink to="/private/providers" className="linkLight">
-          Providers
-        </NavLink>
-        <NavLink to="/private/products" className="linkLight">
-          Products
-        </NavLink>
+        <div className="boxLinkLight">
+          <NavLink to="/private/home" className="linkLight">
+            Home
+          </NavLink>
+        </div>
+        <div className="boxLinkLight">
+          <NavLink to="/private/providers" className="linkLight">
+            Providers
+          </NavLink>
+        </div>
+        <div className="boxLinkLight">
+          <NavLink to="/private/products" className="linkLight">
+            Products
+          </NavLink>
+        </div>
       </div>
     </aside>
   );

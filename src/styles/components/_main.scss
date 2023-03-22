@@ -26,9 +26,23 @@
 }
 
 .main_menu_sidebar-navbar {
-  height: 80%;
+  margin-top: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  .main__sidebar {
+    width: 100%;
+  }
+  .main_sidebar-navbar {
+    display: flex;
+  }
+  .main_menu_sidebar-navbar {
+    margin-top: 0%;
+    height: 70%;
+  }
 }

@@ -13,7 +13,7 @@ export const Products = () => {
   const [productToEdit, setProductToEdit] = useState(undefined);
   const dispatch = useDispatch();
   const { productSelected, list } = useSelector((state) => state.products);
-  console.log(list);
+  console.log("lista ", list);
 
   useEffect(() => {
     dispatch(getProductsAsyncCreator());

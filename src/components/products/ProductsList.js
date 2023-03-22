@@ -24,14 +24,26 @@ export const ProductsList = ({ productList, onDelete, onEdit }) => {
 
         <div>Options</div>
       </div>
-      {productList.map((product) => (
-        <ProductItem
-          key={product._id}
-          productToShow={product}
-          onDelete={onDelete}
-          onEdit={onEdit}
-        />
-      ))}
+      {productList.length === 0 ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "0.5rem",
+          }}
+        >
+          {"There are not products"}
+        </div>
+      ) : (
+        productList.map((product) => (
+          <ProductItem
+            key={product._id}
+            productToShow={product}
+            onDelete={onDelete}
+            onEdit={onEdit}
+          />
+        ))
+      )}
     </div>
   );
 };
