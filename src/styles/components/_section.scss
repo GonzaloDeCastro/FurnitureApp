@@ -1,42 +1,47 @@
 .containerSection {
-	height: 100%;
-	width: 100%;
-	padding: 2% 0.5%;
-	display: flex;
-	flex-direction: column;
-	margin-top: 3%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0rem 0rem 1rem;
 }
 
 .homeContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-table {
-	background-color: rgb(255, 255, 255);
-	margin-top: 15px;
-	text-align: center;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-th,
-td {
-	padding: 1%;
-}
-
-thead {
-	background-color: #7c3494;
-	color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .delete,
 .edit:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .Edit_Delete {
-	display: flex;
-	justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+}
+
+.headerTable {
+  display: flex;
+  background: #7c3494;
+  color: #fff;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+}
+
+.titleField {
+  width: 18%;
+  padding-left: 0.5rem;
+}
+
+.field {
+  width: 18%;
+  padding-left: 0.5rem;
+}
+
+.bodyTable {
+  display: flex;
+  margin-top: 0.5rem;
+  background: #d4abdf;
+  border-radius: 5px;
 }

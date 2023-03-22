@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Footer = (props) => {
-	return (
-		<>
-			<footer className="footer">&copy; Copyright 2022 - Gonzalo De Castro</footer>
-		</>
-	);
+  return (
+    <div className="footer2" style={{ height: "5%" }}>
+      &copy; Copyright 2023 - Gonzalo De Castro
+    </div>
+  );
 };
 
 export default Footer;

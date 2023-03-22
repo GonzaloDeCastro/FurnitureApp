@@ -1,41 +1,64 @@
 import React from "react";
-import { FaTrash as DeleteIcon, FaPen as EditIcon } from "react-icons/fa";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { creatorAsyncRemove } from "../../redux/slices/providersSlice";
 
 export const ProviderItem = ({ providerToShow, onEdit }) => {
   const dispatch = useDispatch();
 
-  const handleDelete = (id) => {
-    const action = creatorAsyncRemove(providerToShow._id);
-    dispatch(action);
+  const Swal = require("sweetalert2");
+  const handleDelete = () => {
+    Swal.fire({
+      title: "Wait!",
+      text: "Are you sure you want to delete this Provider?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Succes!",
+          text: "Provider delete!",
+          icon: "success",
+        });
+        const action = creatorAsyncRemove(providerToShow._id);
+        dispatch(action);
+      }
+    });
   };
 
   return (
-    <tbody>
-      <tr>
-        <td>{providerToShow.company}</td>
-        <td>{providerToShow.firstName}</td>
-        <td>{providerToShow.lastName}</td>
-        <td>{providerToShow.email}</td>
-        <td>{providerToShow.phone}</td>
-        <td>
-          <div className="Edit_Delete">
-            <div>
-              <EditIcon
-                onClick={() => onEdit(providerToShow)}
-                style={{ cursor: "pointer", color: "#944ca8" }}
-              />
-            </div>
-            <div>
-              <DeleteIcon
-                onClick={handleDelete}
-                style={{ cursor: "pointer", color: "#7c3494" }}
-              />
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
+    <div className="bodyTable">
+      <div
+        style={{
+          width: "90%",
+          display: "flex",
+        }}
+      >
+        <div className="field">{providerToShow.company}</div>
+        <div className="field">{providerToShow.firstName}</div>
+        <div className="field">{providerToShow.lastName}</div>
+        <div className="field">{providerToShow.phone}</div>
+        <div className="field">{providerToShow.email}</div>
+      </div>
+      <div
+        style={{
+          width: "10%",
+          display: "flex",
+        }}
+      >
+        <EditIcon
+          onClick={() => onEdit(providerToShow)}
+          style={{ cursor: "pointer", color: "#944ca8", marginRight: "1rem" }}
+        />
+
+        <DeleteIcon
+          onClick={handleDelete}
+          style={{ cursor: "pointer", color: "#7c3494" }}
+        />
+      </div>
+    </div>
   );
 };

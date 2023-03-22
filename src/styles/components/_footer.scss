@@ -1,8 +1,8 @@
-footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: darken($color: $primary, $amount: 15);
-	color: antiquewhite;
-	height: 60px;
+.footer2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darken($color: $primary, $amount: 15);
+  color: antiquewhite;
+  //height: 60px;
 }

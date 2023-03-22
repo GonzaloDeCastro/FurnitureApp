@@ -1,8 +1,9 @@
 .containerHeader {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: darken($color: $primary, $amount: 20);
-	color: antiquewhite;
-	height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darken($color: $primary, $amount: 20);
+  font-size: 25px;
+  color: antiquewhite;
+  height: 10%;
 }

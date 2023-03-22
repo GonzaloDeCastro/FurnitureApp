@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Modal from "react-bootstrap/Modal";
-import { Button } from "react-bootstrap";
+
 import {
   creatorAsyncAdd,
   creatorAsyncEdit,
@@ -20,9 +19,6 @@ export const ProviderForm = ({ type, provider }) => {
   const [email, setEmail] = useState(provider ? provider.email : "");
   const [phone, setPhone] = useState(provider ? provider.phone : "");
   const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -58,14 +54,6 @@ export const ProviderForm = ({ type, provider }) => {
   }, [provider]);
   return (
     <>
-      {/* 		<Button variant="primary" onClick={handleShow} className="btn btn-info ms-2">
-				Launch modal
-			</Button>
-			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
-					<Modal.Title>Provider modal</Modal.Title>
-				</Modal.Header>
-				<Modal.Body> */}
       <form onSubmit={handleSubmit} className="mt-3">
         <input
           type="text"
@@ -116,13 +104,6 @@ export const ProviderForm = ({ type, provider }) => {
           Confirm
         </button>
       </form>
-      {/* 	</Modal.Body>
-				<Modal.Footer>
-					<Button className="btn btn-danger" onClick={handleClose}>
-						Cancel
-					</Button>
-				</Modal.Footer>
-			</Modal> */}
     </>
   );
 };
