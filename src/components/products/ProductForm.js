@@ -8,9 +8,9 @@ import {
   editAsyncCreator,
 } from "../../redux/slices/productsSlice";
 
-export const ProductForm = ({ type, product }) => {
+export const ProductForm = ({ type, product, openModal }) => {
   const dispatch = useDispatch();
-
+  console.log("openModal llega ", openModal);
   const [name, setName] = useState(product ? product.name : "");
   const [description, setDescription] = useState(
     product ? product.description : ""
@@ -18,9 +18,8 @@ export const ProductForm = ({ type, product }) => {
   const [price, setPrice] = useState(product ? product.price : "");
   const [brand, setBrand] = useState(product ? product.brand : "");
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(openModal);
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,18 +52,18 @@ export const ProductForm = ({ type, product }) => {
     setBrand(product ? product.brand : "");
   }, [product]);
 
+  useEffect(() => {
+    console.log("aca tiene que entrar");
+    setShow(!show);
+  }, [openModal, type]);
+  console.log("type", type);
   return (
     <>
-      <Button
-        variant="primary"
-        onClick={handleShow}
-        className="btn btn-info ms-2"
-      >
-        Launch modal
-      </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Product modal</Modal.Title>
+          <Modal.Title>
+            {type === "add" ? "Add Product" : "Edit Product"}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={handleSubmit} className="mt-3">

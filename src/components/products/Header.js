@@ -1,32 +1,34 @@
-import React from 'react';
-import { AddProduct } from './AddProduct';
-import { EditProduct } from './EditProduct';
+import React from "react";
+import { AddProduct } from "./AddProduct";
+import { EditProduct } from "./EditProduct";
 
-export const Header = (props) => {
-	const {
-		showProductForm,
-		setShowProductForm,
-		onAddProduct,
-		productToEdit,
-		onEditProduct,
-	} = props;
-	return (
-		<div>
-			<h4>Products</h4>
-			<button
-				className="btn btn-primary"
-				onClick={() => setShowProductForm({ show: !showProductForm.show, mode: 'Add' })}
-			>
-				{showProductForm.show ? 'Cancel' : 'Add Product'}
-			</button>
-
-			{showProductForm.show ? (
-				showProductForm.mode === 'Add' ? (
-					<AddProduct onAddProduct={onAddProduct} />
-				) : (
-					<EditProduct onEditProduct={onEditProduct} productToEdit={productToEdit} />
-				)
-			) : undefined}
-		</div>
-	);
+export const Header = ({
+  showProductForm,
+  setShowProductForm,
+  productToEdit,
+  onEditProduct,
+}) => {
+  return (
+    <div>
+      <h4>Products</h4>
+      <button
+        className="btn btn-primary"
+        onClick={() =>
+          setShowProductForm({ show: !showProductForm.show, mode: "add" })
+        }
+      >
+        {"Add Product"}
+      </button>
+      {console.log("showProductForm.mode ", showProductForm.mode)}
+      {showProductForm.mode === "add" ? (
+        <AddProduct show={showProductForm.show} />
+      ) : (
+        <EditProduct
+          onEditProduct={onEditProduct}
+          productToEdit={productToEdit}
+          show={showProductForm.show}
+        />
+      )}
+    </div>
+  );
 };

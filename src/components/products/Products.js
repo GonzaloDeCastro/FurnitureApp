@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import { products as otro } from '../../mocks/products.json';
 import { Header } from "./Header";
 import { ProductsList } from "./ProductsList";
 import { v4 as uuidv4 } from "uuid";
@@ -13,21 +12,20 @@ export const Products = () => {
   const [productToEdit, setProductToEdit] = useState(undefined);
   const dispatch = useDispatch();
   const { productSelected, list } = useSelector((state) => state.products);
-  console.log("lista ", list);
 
   useEffect(() => {
     dispatch(getProductsAsyncCreator());
   }, [dispatch]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (productSelected) {
       setShowForm({ show: true, mode: "Edit" });
     }
-  }, [productSelected]);
+  }, [productSelected]); */
 
   const handleEditClick = (product) => {
     setProductToEdit(product);
-    setShowForm({ show: true, mode: "Edit" });
+    setShowForm({ show: !showForm.show, mode: "Edit" });
   };
 
   const handleAddProduct = (product) => {

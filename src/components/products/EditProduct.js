@@ -1,7 +1,6 @@
-import React from 'react';
-import { ProductForm } from './ProductForm';
+import React from "react";
+import { ProductForm } from "./ProductForm";
 
-export const EditProduct = (prop) => {
-	const { productToEdit } = prop;
-	return <ProductForm type="edit" product={productToEdit} />;
+export const EditProduct = ({ productToEdit, show }) => {
+  return <ProductForm type="edit" product={productToEdit} openModal={show} />;
 };
