@@ -1,7 +1,13 @@
-import React from 'react';
-import { ProviderForm } from './ProviderForm';
+import React from "react";
+import { ProviderForm } from "./ProviderForm";
 
-export const EditProvider = (prop) => {
-  const { onEditProvider, providerToEdit } = prop;
-  return <ProviderForm type='edit' provider={providerToEdit} />;
+export const EditProvider = ({ providerToEdit, show, setShowProviderForm }) => {
+  return (
+    <ProviderForm
+      type="edit"
+      provider={providerToEdit}
+      openModal={show}
+      setShowProviderForm={setShowProviderForm}
+    />
+  );
 };

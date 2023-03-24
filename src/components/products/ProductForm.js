@@ -22,8 +22,8 @@ export const ProductForm = ({
   );
   const [price, setPrice] = useState(product ? product.price : "");
   const [brand, setBrand] = useState(product ? product.brand : "");
-
   const [showModal, setShowModal] = useState(false);
+
   const handleClose = () => {
     setShowModal(false);
     if (type === "add") {
@@ -37,6 +37,7 @@ export const ProductForm = ({
     event.preventDefault();
     if (type === "add") {
       const product = { name, description, price, brand };
+
       const action = addAsyncCreator(product);
       dispatch(action);
     }
@@ -69,7 +70,7 @@ export const ProductForm = ({
       setShowModal(!showModal);
     }
   }, [openModal]);
-  console.log("type", type);
+
   return (
     <>
       <Modal show={showModal} onHide={handleClose}>

@@ -77,7 +77,13 @@ export const addAsyncCreator = (product) => {
           icon: "success",
         });
       }
-    } catch (error) {}
+    } catch (error) {
+      Swal.fire({
+        title: "Error!",
+        text: "Please fill all fields",
+        icon: "error",
+      });
+    }
   };
 };
 

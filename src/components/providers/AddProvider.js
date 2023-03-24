@@ -1,6 +1,12 @@
-import React from 'react';
-import { ProviderForm } from './ProviderForm';
+import React from "react";
+import { ProviderForm } from "./ProviderForm";
 
-export const AddProvider = (props) => {
-  return <ProviderForm type='add' />;
+export const AddProvider = ({ show, setShowProviderForm }) => {
+  return (
+    <ProviderForm
+      type="add"
+      openModal={show}
+      setShowProviderForm={setShowProviderForm}
+    />
+  );
 };

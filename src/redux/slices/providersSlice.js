@@ -48,7 +48,7 @@ export const creatorAsyncAdd = (provider) => {
         `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/`,
         provider
       );
-
+      console.log("res.status ", res.status);
       if (res.status === 201) {
         const action = creatorAddProvider(res.data.dato);
         dispatch(action);
@@ -58,7 +58,13 @@ export const creatorAsyncAdd = (provider) => {
           icon: "success",
         });
       }
-    } catch (error) {}
+    } catch (error) {
+      Swal.fire({
+        title: "Error!",
+        text: "Please fill all fields",
+        icon: "error",
+      });
+    }
   };
 };
 
