@@ -18,11 +18,6 @@ export const ProductItem = ({ productToShow, onEdit }) => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Succes!",
-          text: "Product delete!",
-          icon: "success",
-        });
         const action = deleteAsyncCreator(productToShow._id);
         dispatch(action);
       }

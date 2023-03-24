@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const initialState = {
   list: [],
@@ -40,7 +41,6 @@ export const provider = createSlice({
   },
 });
 
-// Anda
 export const creatorAsyncAdd = (provider) => {
   return async (dispatch) => {
     try {
@@ -52,11 +52,16 @@ export const creatorAsyncAdd = (provider) => {
       if (res.status === 201) {
         const action = creatorAddProvider(res.data.dato);
         dispatch(action);
+        Swal.fire({
+          title: "Succes!",
+          text: "Provider added!",
+          icon: "success",
+        });
       }
     } catch (error) {}
   };
 };
-// Anda
+
 export const creatorAsyncRemove = (providerId) => {
   return async (dispatch) => {
     try {
@@ -67,12 +72,16 @@ export const creatorAsyncRemove = (providerId) => {
       if (res.status === 202) {
         const action = creatorRemoveProvider(providerId);
         dispatch(action);
+        Swal.fire({
+          title: "Succes!",
+          text: "Provider deleted!",
+          icon: "success",
+        });
       }
     } catch (error) {}
   };
 };
-// Anda
-// No anda
+
 export const creatorAsyncEdit = (provider) => {
   return async (dispatch) => {
     try {
@@ -83,6 +92,11 @@ export const creatorAsyncEdit = (provider) => {
       );
       console.log(res);
       if (res.status === 202 || res.status === 200 || res.status === 201) {
+        Swal.fire({
+          title: "Succes!",
+          text: "Provider modified!",
+          icon: "success",
+        });
         return dispatch(creatorEditProvider(res.data));
       }
     } catch (error) {

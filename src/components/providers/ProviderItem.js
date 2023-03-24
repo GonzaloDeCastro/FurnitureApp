@@ -18,11 +18,6 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Succes!",
-          text: "Provider delete!",
-          icon: "success",
-        });
         const action = creatorAsyncRemove(providerToShow._id);
         dispatch(action);
       }

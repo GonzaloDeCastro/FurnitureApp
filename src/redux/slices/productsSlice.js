@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
+import Swal from "sweetalert2";
 
 const initialState = {
   list: [],
@@ -50,6 +51,11 @@ export const deleteAsyncCreator = (productId) => {
       if (response.status === 202) {
         const action = creatorRemoveProduct(productId);
         dispatch(action);
+        Swal.fire({
+          title: "Succes!",
+          text: "Product delete!",
+          icon: "success",
+        });
       }
     } catch (error) {}
   };
@@ -65,6 +71,11 @@ export const addAsyncCreator = (product) => {
       if (response.status === 201) {
         const action = creatorAddProduct(response.data.dato);
         dispatch(action);
+        Swal.fire({
+          title: "Succes!",
+          text: "Product added!",
+          icon: "success",
+        });
       }
     } catch (error) {}
   };
@@ -82,6 +93,11 @@ export const editAsyncCreator = (product) => {
       if (response.status === 200) {
         const action = creatorEditProduct(response.data);
         dispatch(action);
+        Swal.fire({
+          title: "Succes!",
+          text: "Product modified!",
+          icon: "success",
+        });
       }
     } catch (error) {}
   };
