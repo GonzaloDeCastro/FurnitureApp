@@ -44,7 +44,6 @@ export const LoginScreen = () => {
       <form onSubmit={handleLogin}>
         {loading && <div className="auth__alert-loading">Loading...</div>}
         {msgError && <div className="auth__alert-error">{msgError}</div>}
-        {}
 
         <input
           type="text"

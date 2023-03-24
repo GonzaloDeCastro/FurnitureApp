@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import { providers as initalProviders } from '../../mocks/providers.json';
 import { Header } from "./Header";
 import { ProvidersList } from "./ProviderList";
 import { v4 as uuidv4 } from "uuid";

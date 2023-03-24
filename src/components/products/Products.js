@@ -6,22 +6,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProductsAsyncCreator } from "../../redux/slices/productsSlice";
 
 export const Products = () => {
-  //const { list, productSelected } = useSelector((state) => state.products);
   const [showForm, setShowForm] = useState({ show: false, mode: "Add" });
   const [products, setproducts] = useState({});
   const [productToEdit, setProductToEdit] = useState(undefined);
   const dispatch = useDispatch();
-  const { productSelected, list } = useSelector((state) => state.products);
+  const { list } = useSelector((state) => state.products);
 
   useEffect(() => {
     dispatch(getProductsAsyncCreator());
   }, [dispatch]);
-
-  /*   useEffect(() => {
-    if (productSelected) {
-      setShowForm({ show: true, mode: "Edit" });
-    }
-  }, [productSelected]); */
 
   const handleEditClick = (product) => {
     setProductToEdit(product);

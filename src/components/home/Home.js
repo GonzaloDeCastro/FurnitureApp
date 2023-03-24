@@ -17,7 +17,6 @@ export const Home = () => {
         The system is programmed with front-end code in React, it connects to a
         backend programmed with Express in Nodejs
       </p>
-      {/* <p>And the database to which the backend connects is MongoDB.</p> */}
     </div>
   );
 };
