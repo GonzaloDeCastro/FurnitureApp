@@ -19,14 +19,18 @@ export const Header = ({
       >
         {"Add Product"}
       </button>
-      {console.log("showProductForm.mode ", showProductForm.mode)}
+
       {showProductForm.mode === "add" ? (
-        <AddProduct show={showProductForm.show} />
+        <AddProduct
+          show={showProductForm.show}
+          setShowProductForm={setShowProductForm}
+        />
       ) : (
         <EditProduct
           onEditProduct={onEditProduct}
           productToEdit={productToEdit}
           show={showProductForm.show}
+          setShowProductForm={setShowProductForm}
         />
       )}
     </div>

@@ -8,9 +8,14 @@ import {
   editAsyncCreator,
 } from "../../redux/slices/productsSlice";
 
-export const ProductForm = ({ type, product, openModal }) => {
+export const ProductForm = ({
+  type,
+  product,
+  openModal,
+  setShowProductForm,
+}) => {
   const dispatch = useDispatch();
-  console.log("openModal llega ", openModal);
+
   const [name, setName] = useState(product ? product.name : "");
   const [description, setDescription] = useState(
     product ? product.description : ""
@@ -18,8 +23,15 @@ export const ProductForm = ({ type, product, openModal }) => {
   const [price, setPrice] = useState(product ? product.price : "");
   const [brand, setBrand] = useState(product ? product.brand : "");
 
-  const [show, setShow] = useState(openModal);
-  const handleClose = () => setShow(false);
+  const [showModal, setShowModal] = useState(false);
+  const handleClose = () => {
+    setShowModal(false);
+    if (type === "add") {
+      setShowProductForm({ showModal: false, mode: "add" });
+    } else {
+      setShowProductForm({ showModal: false, mode: "edit" });
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,13 +65,14 @@ export const ProductForm = ({ type, product, openModal }) => {
   }, [product]);
 
   useEffect(() => {
-    console.log("aca tiene que entrar");
-    setShow(!show);
-  }, [openModal, type]);
+    if (openModal) {
+      setShowModal(!showModal);
+    }
+  }, [openModal]);
   console.log("type", type);
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
             {type === "add" ? "Add Product" : "Edit Product"}
