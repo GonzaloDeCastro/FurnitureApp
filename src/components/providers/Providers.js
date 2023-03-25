@@ -3,7 +3,7 @@ import { Header } from "./Header";
 import { ProvidersList } from "./ProviderList";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
-import { creatorAsyncGet } from "../../redux/slices/providersSlice";
+import { creatorAsyncGetProviders } from "../../redux/slices/providersSlice";
 
 export const Providers = () => {
   const [showForm, setShowForm] = useState({ show: false, mode: "Add" });
@@ -19,7 +19,7 @@ export const Providers = () => {
   }, [providerSelected]);
 
   useEffect(() => {
-    dispatch(creatorAsyncGet());
+    dispatch(creatorAsyncGetProviders());
     return () => {};
   }, [dispatch]);
 

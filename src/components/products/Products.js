@@ -3,7 +3,7 @@ import { Header } from "./Header";
 import { ProductsList } from "./ProductsList";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector, useDispatch } from "react-redux";
-import { getProductsAsyncCreator } from "../../redux/slices/productsSlice";
+import { creatorAsyncGetProducts } from "../../redux/slices/productsSlice";
 
 export const Products = () => {
   const [showForm, setShowForm] = useState({ show: false, mode: "Add" });
@@ -13,7 +13,7 @@ export const Products = () => {
   const { list } = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(getProductsAsyncCreator());
+    dispatch(creatorAsyncGetProducts());
   }, [dispatch]);
 
   const handleEditClick = (product) => {

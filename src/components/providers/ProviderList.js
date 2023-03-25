@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ProviderItem } from "./ProviderItem";
 
 export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
+  console.log("providerList ", providerList);
+  useEffect(() => {}, []);
+
   return (
     <div
       style={{

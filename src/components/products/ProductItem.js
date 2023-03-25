@@ -2,7 +2,7 @@ import React from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
-import { deleteAsyncCreator } from "../../redux/slices/productsSlice";
+import { creatorAsyncDeleteProduct } from "../../redux/slices/productsSlice";
 
 export const ProductItem = ({ productToShow, onEdit }) => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ export const ProductItem = ({ productToShow, onEdit }) => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        const action = deleteAsyncCreator(productToShow._id);
+        const action = creatorAsyncDeleteProduct(productToShow._id);
         dispatch(action);
       }
     });

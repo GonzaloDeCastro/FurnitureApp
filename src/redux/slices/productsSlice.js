@@ -32,7 +32,7 @@ export const product = createSlice({
         ),
       };
     },
-    getProducts: (state, action) => {
+    creatorGetProducts: (state, action) => {
       return {
         ...state,
         list: action.payload,
@@ -41,7 +41,7 @@ export const product = createSlice({
   },
 });
 
-export const deleteAsyncCreator = (productId) => {
+export const creatorAsyncDeleteProduct = (productId) => {
   return async (dispatch) => {
     try {
       const response = await axios.delete(
@@ -60,7 +60,7 @@ export const deleteAsyncCreator = (productId) => {
     } catch (error) {}
   };
 };
-export const addAsyncCreator = (product) => {
+export const creatorAsyncAddProduct = (product) => {
   return async (dispatch) => {
     try {
       const response = await axios.post(
@@ -87,7 +87,7 @@ export const addAsyncCreator = (product) => {
   };
 };
 
-export const editAsyncCreator = (product) => {
+export const creatorAsyncEditProduct = (product) => {
   return async (dispatch) => {
     try {
       const response = await axios.put(
@@ -108,7 +108,7 @@ export const editAsyncCreator = (product) => {
     } catch (error) {}
   };
 };
-export const getProductsAsyncCreator = () => {
+export const creatorAsyncGetProducts = () => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
@@ -116,7 +116,7 @@ export const getProductsAsyncCreator = () => {
       );
 
       if (response.status === 200) {
-        const action = getProducts(response.data.data);
+        const action = creatorGetProducts(response.data.data);
         dispatch(action);
       }
     } catch (error) {}
@@ -126,7 +126,7 @@ export const getProductsAsyncCreator = () => {
 export const {
   creatorRemoveProduct,
   creatorEditProduct,
-  getProducts,
+  creatorGetProducts,
   creatorAddProduct,
 } = product.actions;
 export default product.reducer;

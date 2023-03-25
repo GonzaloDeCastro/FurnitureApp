@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import {
-  addAsyncCreator,
-  editAsyncCreator,
+  creatorAsyncAddProduct,
+  creatorAsyncEditProduct,
 } from "../../redux/slices/productsSlice";
 
 export const ProductForm = ({
@@ -38,7 +38,7 @@ export const ProductForm = ({
     if (type === "add") {
       const product = { name, description, price, brand };
 
-      const action = addAsyncCreator(product);
+      const action = creatorAsyncAddProduct(product);
       dispatch(action);
     }
     if (type === "edit") {
@@ -49,7 +49,7 @@ export const ProductForm = ({
         price,
         brand,
       };
-      const action = editAsyncCreator(payloadProduct);
+      const action = creatorAsyncEditProduct(payloadProduct);
       dispatch(action);
     }
     setName("");

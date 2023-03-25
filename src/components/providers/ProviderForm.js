@@ -4,8 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 import { Button } from "react-bootstrap";
 import {
-  creatorAsyncAdd,
-  creatorAsyncEdit,
+  creatorAsyncAddProvider,
+  creatorAsyncEditProvider,
 } from "../../redux/slices/providersSlice";
 
 export const ProviderForm = ({
@@ -39,7 +39,7 @@ export const ProviderForm = ({
 
     if (type === "add") {
       const provider = { company, firstName, lastName, email, phone };
-      const action = creatorAsyncAdd(provider);
+      const action = creatorAsyncAddProvider(provider);
       dispatch(action);
     }
     if (type === "edit") {
@@ -51,7 +51,7 @@ export const ProviderForm = ({
         email,
         phone,
       };
-      const action = creatorAsyncEdit(payloadProvider);
+      const action = creatorAsyncEditProvider(payloadProvider);
       dispatch(action);
     }
     setCompany("");

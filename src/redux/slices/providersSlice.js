@@ -32,7 +32,7 @@ export const provider = createSlice({
         ),
       };
     },
-    creatorGetAllProviders: (state, action) => {
+    creatorGetProviders: (state, action) => {
       return {
         ...state,
         list: action.payload,
@@ -41,14 +41,21 @@ export const provider = createSlice({
   },
 });
 
-export const creatorAsyncAdd = (provider) => {
+export const {
+  creatorRemoveProvider,
+  creatorEditProvider,
+  creatorGetProviders,
+  creatorAddProvider,
+} = provider.actions;
+
+export const creatorAsyncAddProvider = (provider) => {
   return async (dispatch) => {
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/`,
         provider
       );
-      console.log("res.status ", res.status);
+
       if (res.status === 201) {
         const action = creatorAddProvider(res.data.dato);
         dispatch(action);
@@ -68,13 +75,13 @@ export const creatorAsyncAdd = (provider) => {
   };
 };
 
-export const creatorAsyncRemove = (providerId) => {
+export const creatorAsyncDeleteProvider = (providerId) => {
   return async (dispatch) => {
     try {
       const res = await axios.delete(
         `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${providerId}`
       );
-      console.log(res.data.data._id);
+
       if (res.status === 202) {
         const action = creatorRemoveProvider(providerId);
         dispatch(action);
@@ -88,15 +95,14 @@ export const creatorAsyncRemove = (providerId) => {
   };
 };
 
-export const creatorAsyncEdit = (provider) => {
+export const creatorAsyncEditProvider = (provider) => {
   return async (dispatch) => {
     try {
       const res = await axios.put(
         `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${provider.id}`,
-        provider,
-        console.log(provider)
+        provider
       );
-      console.log(res);
+
       if (res.status === 202 || res.status === 200 || res.status === 201) {
         Swal.fire({
           title: "Succes!",
@@ -110,25 +116,19 @@ export const creatorAsyncEdit = (provider) => {
     }
   };
 };
-export const creatorAsyncGet = () => {
+export const creatorAsyncGetProviders = () => {
   return async (dispatch) => {
     try {
       const res = await axios.get(
         `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/all`
       );
-      console.log(res.data.data);
+
       if (res.status === 200) {
-        const action = creatorGetAllProviders(res.data.data);
+        const action = creatorGetProviders(res.data.data);
         dispatch(action);
       }
     } catch (error) {}
   };
 };
 
-export const {
-  creatorRemoveProvider,
-  creatorEditProvider,
-  creatorGetAllProviders,
-  creatorAddProvider,
-} = provider.actions;
 export default provider.reducer;

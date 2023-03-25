@@ -2,7 +2,7 @@ import React from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
-import { creatorAsyncRemove } from "../../redux/slices/providersSlice";
+import { creatorAsyncDeleteProvider } from "../../redux/slices/providersSlice";
 
 export const ProviderItem = ({ providerToShow, onEdit }) => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        const action = creatorAsyncRemove(providerToShow._id);
+        const action = creatorAsyncDeleteProvider(providerToShow._id);
         dispatch(action);
       }
     });
