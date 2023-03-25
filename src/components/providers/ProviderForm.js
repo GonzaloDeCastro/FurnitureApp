@@ -7,7 +7,7 @@ import {
   creatorAsyncAddProvider,
   creatorAsyncEditProvider,
 } from "../../redux/slices/providersSlice";
-
+import validator from "validator";
 export const ProviderForm = ({
   type,
   provider,
@@ -24,6 +24,8 @@ export const ProviderForm = ({
   const [email, setEmail] = useState(provider ? provider.email : "");
   const [phone, setPhone] = useState(provider ? provider.phone : "");
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(false);
+  const [send, setSend] = useState(false);
 
   const handleClose = () => {
     setShowModal(false);
@@ -33,32 +35,38 @@ export const ProviderForm = ({
       setShowProviderForm({ show: false, mode: "edit" });
     }
   };
+  const sendForm = () => {
+    setSend(true);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (type === "add") {
-      const provider = { company, firstName, lastName, email, phone };
-      const action = creatorAsyncAddProvider(provider);
-      dispatch(action);
+    if (error === false) {
+      if (type === "add") {
+        const provider = { company, firstName, lastName, email, phone };
+        const action = creatorAsyncAddProvider(provider);
+        dispatch(action);
+      }
+      if (type === "edit") {
+        const payloadProvider = {
+          id: provider._id,
+          company,
+          firstName,
+          lastName,
+          email,
+          phone,
+        };
+        const action = creatorAsyncEditProvider(payloadProvider);
+        dispatch(action);
+      }
+      setCompany("");
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+      handleClose();
+      console.log("no debería entrar aca");
     }
-    if (type === "edit") {
-      const payloadProvider = {
-        id: provider._id,
-        company,
-        firstName,
-        lastName,
-        email,
-        phone,
-      };
-      const action = creatorAsyncEditProvider(payloadProvider);
-      dispatch(action);
-    }
-    setCompany("");
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPhone("");
   };
 
   useEffect(() => {
@@ -74,6 +82,24 @@ export const ProviderForm = ({
       setShowModal(!showModal);
     }
   }, [openModal]);
+
+  useEffect(() => {
+    if (send) {
+      if (company.length === 0) {
+        setError("empty company");
+      } else if (firstName.length === 0) {
+        setError("empty firstname");
+      } else if (lastName.length === 0) {
+        setError("empty lastname");
+      } else if (email.length === 0) {
+        setError("empty email");
+      } else if (phone.length === 0) {
+        setError("empty phone");
+      } else {
+        setError(false);
+      }
+    }
+  }, [handleSubmit]);
 
   return (
     <>
@@ -93,6 +119,7 @@ export const ProviderForm = ({
               onChange={(e) => setCompany(e.target.value)}
               value={company}
             />
+            {error === "empty company" && <p>Fill company field</p>}
             <input
               type="text"
               name="firstname"
@@ -101,6 +128,8 @@ export const ProviderForm = ({
               onChange={(e) => setFirstName(e.target.value)}
               value={firstName}
             />
+            {error === "empty firstname" && <p>Fill Firstname field</p>}
+
             <input
               type="text"
               name="lastname"
@@ -109,6 +138,7 @@ export const ProviderForm = ({
               onChange={(e) => setLastName(e.target.value)}
               value={lastName}
             />
+            {error === "empty lastname" && <p>Fill lastname field</p>}
             <input
               type="email"
               name="email"
@@ -117,6 +147,7 @@ export const ProviderForm = ({
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
+            {error === "empty email" && <p>Fill email field</p>}
             <input
               type="number"
               name="phone"
@@ -125,7 +156,8 @@ export const ProviderForm = ({
               onChange={(e) => setPhone(e.target.value)}
               value={phone}
             />
-            <button className="btn-success" type="submit" onClick={handleClose}>
+            {error === "empty phone" && <p>Fill phone field</p>}
+            <button className="btn-success" type="submit" onClick={sendForm}>
               Confirm
             </button>
           </form>
