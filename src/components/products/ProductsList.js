@@ -16,10 +16,10 @@ export const ProductsList = ({ productList, onDelete, onEdit }) => {
             width: "90%",
           }}
         >
-          <div className="titleField">Product</div>
-          <div className="titleField">Description</div>
-          <div className="titleField">Price</div>
-          <div className="titleField">Brand</div>
+          <div className="titleFieldProduct">Product</div>
+          <div className="titleFieldProduct">Description</div>
+          <div className="titleFieldProduct">Price</div>
+          <div className="titleFieldProduct">Brand</div>
         </div>
 
         <div>Options</div>

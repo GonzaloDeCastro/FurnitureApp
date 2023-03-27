@@ -45,15 +45,15 @@ export const creatorAsyncDeleteProduct = (productId) => {
   return async (dispatch) => {
     try {
       const response = await axios.delete(
-        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${productId}`
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${productId._id}`
       );
       console.log(response);
       if (response.status === 202) {
-        const action = creatorRemoveProduct(productId);
+        const action = creatorRemoveProduct(productId._id);
         dispatch(action);
         Swal.fire({
           title: "Succes!",
-          text: "Product delete!",
+          text: `${productId.name} product has been deleted!`,
           icon: "success",
         });
       }

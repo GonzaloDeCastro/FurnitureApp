@@ -18,7 +18,7 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        const action = creatorAsyncDeleteProvider(providerToShow._id);
+        const action = creatorAsyncDeleteProvider(providerToShow);
         dispatch(action);
       }
     });
@@ -32,11 +32,11 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
           display: "flex",
         }}
       >
-        <div className="field">{providerToShow.company}</div>
-        <div className="field">{providerToShow.firstName}</div>
-        <div className="field">{providerToShow.lastName}</div>
-        <div className="field">{providerToShow.phone}</div>
-        <div className="field">{providerToShow.email}</div>
+        <div className="fieldProvider">{providerToShow.company}</div>
+        <div className="fieldProvider">{providerToShow.firstName}</div>
+        <div className="fieldProvider">{providerToShow.lastName}</div>
+        <div className="fieldProvider">{providerToShow.phone}</div>
+        <div className="fieldProvider">{providerToShow.email}</div>
       </div>
       <div
         style={{

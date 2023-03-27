@@ -15,11 +15,11 @@ export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
             width: "90%",
           }}
         >
-          <div className="titleField">Company</div>
-          <div className="titleField">Firstname</div>
-          <div className="titleField">Lastname</div>
-          <div className="titleField">Phone</div>
-          <div className="titleField">Email</div>
+          <div className="titleFieldProvider">Company</div>
+          <div className="titleFieldProvider">Firstname</div>
+          <div className="titleFieldProvider">Lastname</div>
+          <div className="titleFieldProvider">Phone</div>
+          <div className="titleFieldProvider">Email</div>
         </div>
 
         <div

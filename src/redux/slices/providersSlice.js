@@ -75,19 +75,19 @@ export const creatorAsyncAddProvider = (provider) => {
   };
 };
 
-export const creatorAsyncDeleteProvider = (providerId) => {
+export const creatorAsyncDeleteProvider = (provider) => {
   return async (dispatch) => {
     try {
       const res = await axios.delete(
-        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${providerId}`
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${provider._id}`
       );
 
       if (res.status === 202) {
-        const action = creatorRemoveProvider(providerId);
+        const action = creatorRemoveProvider(provider._id);
         dispatch(action);
         Swal.fire({
           title: "Succes!",
-          text: "Provider deleted!",
+          text: `Provider ${provider.company} has been removed!`,
           icon: "success",
         });
       }

@@ -18,7 +18,7 @@ export const ProductItem = ({ productToShow, onEdit }) => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        const action = creatorAsyncDeleteProduct(productToShow._id);
+        const action = creatorAsyncDeleteProduct(productToShow);
         dispatch(action);
       }
     });
@@ -32,10 +32,10 @@ export const ProductItem = ({ productToShow, onEdit }) => {
           display: "flex",
         }}
       >
-        <div className="field">{productToShow.name}</div>
-        <div className="field">{productToShow.description}</div>
-        <div className="field">{productToShow.price}</div>
-        <div className="field">{productToShow.brand}</div>
+        <div className="fieldProduct">{productToShow.name}</div>
+        <div className="fieldProduct">{productToShow.description}</div>
+        <div className="fieldProduct">{productToShow.price}</div>
+        <div className="fieldProduct">{productToShow.brand}</div>
       </div>
       <div
         style={{
@@ -45,7 +45,7 @@ export const ProductItem = ({ productToShow, onEdit }) => {
       >
         <EditIcon
           onClick={() => onEdit(productToShow)}
-          style={{ cursor: "pointer", color: "#944ca8", marginRight: "1rem" }}
+          style={{ cursor: "pointer", color: "#944ca8" }}
         />
 
         <DeleteIcon

@@ -30,13 +30,22 @@
   border-radius: 5px;
 }
 
-.titleField {
+.titleFieldProvider {
   width: 18%;
   padding-left: 0.5rem;
 }
 
-.field {
+.fieldProvider {
   width: 18%;
+  padding-left: 0.5rem;
+}
+.titleFieldProduct {
+  width: 25%;
+  padding-left: 0.5rem;
+}
+
+.fieldProduct {
+  width: 25%;
   padding-left: 0.5rem;
 }
 
@@ -50,9 +59,24 @@
 @media screen and (max-width: 800px) {
   .containerSection {
     margin: 1rem 0rem 0rem 0rem;
+    width: 98%;
   }
   .homeContainer {
     margin-top: -2%;
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 667px) {
+  .containerSection {
+    margin: 1rem 0rem 0rem 0rem;
+    width: 98%;
+  }
+  .bodyTable {
+    width: 98%;
+  }
+  .headerTable {
+    display: flex;
+    flex-direction: column;
   }
 }
