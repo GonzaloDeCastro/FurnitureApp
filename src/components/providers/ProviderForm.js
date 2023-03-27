@@ -7,7 +7,6 @@ import {
   creatorAsyncAddProvider,
   creatorAsyncEditProvider,
 } from "../../redux/slices/providersSlice";
-import validator from "validator";
 export const ProviderForm = ({
   type,
   provider,
@@ -65,7 +64,6 @@ export const ProviderForm = ({
       setEmail("");
       setPhone("");
       handleClose();
-      console.log("no debería entrar aca");
     }
   };
 
@@ -106,7 +104,7 @@ export const ProviderForm = ({
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>
-            {type === "add" ? "Add Product" : "Edit Product"}
+            {type === "add" ? "Add Provider" : "Edit Provider"}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

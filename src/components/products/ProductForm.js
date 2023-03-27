@@ -23,6 +23,8 @@ export const ProductForm = ({
   const [price, setPrice] = useState(product ? product.price : "");
   const [brand, setBrand] = useState(product ? product.brand : "");
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(false);
+  const [send, setSend] = useState(false);
 
   const handleClose = () => {
     setShowModal(false);
@@ -33,29 +35,35 @@ export const ProductForm = ({
     }
   };
 
+  const sendForm = () => {
+    setSend(true);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (type === "add") {
-      const product = { name, description, price, brand };
-
-      const action = creatorAsyncAddProduct(product);
-      dispatch(action);
+    if (error === false) {
+      if (type === "add") {
+        const product = { name, description, price, brand };
+        const action = creatorAsyncAddProduct(product);
+        dispatch(action);
+      }
+      if (type === "edit") {
+        const payloadProduct = {
+          id: product._id,
+          name,
+          description,
+          price,
+          brand,
+        };
+        const action = creatorAsyncEditProduct(payloadProduct);
+        dispatch(action);
+      }
+      setName("");
+      setDescription("");
+      setPrice("");
+      setBrand("");
+      handleClose();
     }
-    if (type === "edit") {
-      const payloadProduct = {
-        id: product._id,
-        name,
-        description,
-        price,
-        brand,
-      };
-      const action = creatorAsyncEditProduct(payloadProduct);
-      dispatch(action);
-    }
-    setName("");
-    setDescription("");
-    setPrice("");
-    setBrand("");
   };
 
   useEffect(() => {
@@ -70,6 +78,22 @@ export const ProductForm = ({
       setShowModal(!showModal);
     }
   }, [openModal]);
+
+  useEffect(() => {
+    if (send) {
+      if (name.length === 0) {
+        setError("empty name");
+      } else if (description.length === 0) {
+        setError("empty description");
+      } else if (price.length === 0) {
+        setError("empty price");
+      } else if (brand.length === 0) {
+        setError("empty brand");
+      } else {
+        setError(false);
+      }
+    }
+  }, [handleSubmit]);
 
   return (
     <>
@@ -89,6 +113,7 @@ export const ProductForm = ({
               onChange={(e) => setName(e.target.value)}
               value={name}
             />
+            {error === "empty name" && <p>Fill name field</p>}
             <input
               type="text"
               name="description"
@@ -97,6 +122,7 @@ export const ProductForm = ({
               onChange={(e) => setDescription(e.target.value)}
               value={description}
             />
+            {error === "empty description" && <p>Fill description field</p>}
             <input
               type="number"
               name="price"
@@ -105,6 +131,7 @@ export const ProductForm = ({
               onChange={(e) => setPrice(e.target.value)}
               value={price}
             />
+            {error === "empty price" && <p>Fill price field</p>}
             <input
               type="text"
               name="brand"
@@ -113,7 +140,8 @@ export const ProductForm = ({
               onChange={(e) => setBrand(e.target.value)}
               value={brand}
             />
-            <button className="btn-success" type="submit" onClick={handleClose}>
+            {error === "empty brand" && <p>Fill brand field</p>}
+            <button className="btn-success" type="submit" onClick={sendForm}>
               Confirm
             </button>
           </form>
