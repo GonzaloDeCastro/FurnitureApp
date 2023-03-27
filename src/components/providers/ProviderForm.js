@@ -101,7 +101,7 @@ export const ProviderForm = ({
 
   return (
     <>
-      <Modal show={showModal} onHide={handleClose}>
+      <Modal show={showModal} onHide={handleClose} className="modal__provider">
         <Modal.Header closeButton>
           <Modal.Title>
             {type === "add" ? "Add Provider" : "Edit Provider"}

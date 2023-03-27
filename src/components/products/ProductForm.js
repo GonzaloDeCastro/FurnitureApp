@@ -97,60 +97,62 @@ export const ProductForm = ({
 
   return (
     <>
-      <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            {type === "add" ? "Add Product" : "Edit Product"}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <form onSubmit={handleSubmit} className="mt-3">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="form-control mb-3"
-              onChange={(e) => setName(e.target.value)}
-              value={name}
-            />
-            {error === "empty name" && <p>Fill name field</p>}
-            <input
-              type="text"
-              name="description"
-              placeholder="Description"
-              className="form-control mb-3"
-              onChange={(e) => setDescription(e.target.value)}
-              value={description}
-            />
-            {error === "empty description" && <p>Fill description field</p>}
-            <input
-              type="number"
-              name="price"
-              placeholder="Price"
-              className="form-control mb-3"
-              onChange={(e) => setPrice(e.target.value)}
-              value={price}
-            />
-            {error === "empty price" && <p>Fill price field</p>}
-            <input
-              type="text"
-              name="brand"
-              placeholder="Brand"
-              className="form-control mb-3"
-              onChange={(e) => setBrand(e.target.value)}
-              value={brand}
-            />
-            {error === "empty brand" && <p>Fill brand field</p>}
-            <button className="btn-success" type="submit" onClick={sendForm}>
-              Confirm
-            </button>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button className="btn btn-danger" onClick={handleClose}>
-            Cancel
-          </Button>
-        </Modal.Footer>
+      <Modal show={showModal} onHide={handleClose} className="modal__product">
+        <div className="modal-content">
+          <Modal.Header closeButton>
+            <Modal.Title>
+              {type === "add" ? "Add Product" : "Edit Product"}
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <form onSubmit={handleSubmit} className="mt-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                className="form-control mb-3"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+              {error === "empty name" && <p>Fill name field</p>}
+              <input
+                type="text"
+                name="description"
+                placeholder="Description"
+                className="form-control mb-3"
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
+              />
+              {error === "empty description" && <p>Fill description field</p>}
+              <input
+                type="number"
+                name="price"
+                placeholder="Price"
+                className="form-control mb-3"
+                onChange={(e) => setPrice(e.target.value)}
+                value={price}
+              />
+              {error === "empty price" && <p>Fill price field</p>}
+              <input
+                type="text"
+                name="brand"
+                placeholder="Brand"
+                className="form-control mb-3"
+                onChange={(e) => setBrand(e.target.value)}
+                value={brand}
+              />
+              {error === "empty brand" && <p>Fill brand field</p>}
+              <button className="btn-success" type="submit" onClick={sendForm}>
+                Confirm
+              </button>
+            </form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className="btn btn-danger" onClick={handleClose}>
+              Cancel
+            </Button>
+          </Modal.Footer>
+        </div>
       </Modal>
     </>
   );

@@ -1,0 +1,19 @@
+.modal__product {
+  width: 100%;
+}
+.modal__provider {
+  width: 100%;
+}
+
+@media screen and (max-width: 667px) {
+  .modal__product {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin-left: 10%;
+  }
+  .modal__provider {
+    margin-left: 3%;
+    width: 70%;
+  }
+}
