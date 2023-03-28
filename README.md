@@ -7,7 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This is a Web Application of add delete and modifications of suppliers and products.
 Once you are registered you can register products, modify them and also delete them.
 You can also add suppliers, modify or delete them.
-The system is programmed with front-end code in React, El mismo se conecta a un backend programado con Express en Nodejs
+The system is programmed with front-end code in React, backend with Express and NodeJS
 And the database to which the backend connects is MongoDB.
 
 ### Instructions
@@ -36,7 +36,7 @@ We install the necessary packages to be able to run the system with "npm install
 4. create file ".env" in your root folder with the following content
 
 ```
-REACT_APP_BACKEND_URL_PORT = https://furniture-app-web-backend.herokuapp.com
+REACT_APP_BACKEND_URL_PORT = https://furnitureapi.onrender.com
 
 
 this is my backend in node ;)
@@ -54,4 +54,4 @@ We start the server with the command "npm start"
 Enjoy the App
 ```
 
-7. Try my App in Heroku, click [Here](https://furniture-app-web.herokuapp.com)
+7. Try my App in Render, click [Here](https://furnitureapp.onrender.com)
