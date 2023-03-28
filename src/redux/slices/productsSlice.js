@@ -73,7 +73,7 @@ export const creatorAsyncAddProduct = (product) => {
         dispatch(action);
         Swal.fire({
           title: "Succes!",
-          text: "Product added!",
+          text: `Product ${product.name} added!`,
           icon: "success",
         });
       }

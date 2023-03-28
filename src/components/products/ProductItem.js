@@ -11,7 +11,7 @@ export const ProductItem = ({ productToShow, onEdit }) => {
   const handleDelete = () => {
     Swal.fire({
       title: "Wait!",
-      text: "Are you sure you want to delete this Product?",
+      text: `Are you sure you want to delete item ${productToShow.name}?`,
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes",
@@ -34,7 +34,7 @@ export const ProductItem = ({ productToShow, onEdit }) => {
       >
         <div className="fieldProduct">{productToShow.name}</div>
         <div className="fieldProduct">{productToShow.description}</div>
-        <div className="fieldProduct">{productToShow.price}</div>
+        <div className="fieldProduct">${productToShow.price}</div>
         <div className="fieldProduct">{productToShow.brand}</div>
       </div>
       <div

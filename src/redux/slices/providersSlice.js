@@ -61,7 +61,7 @@ export const creatorAsyncAddProvider = (provider) => {
         dispatch(action);
         Swal.fire({
           title: "Succes!",
-          text: "Provider added!",
+          text: `${provider.company} Provider added!`,
           icon: "success",
         });
       }
@@ -87,7 +87,7 @@ export const creatorAsyncDeleteProvider = (provider) => {
         dispatch(action);
         Swal.fire({
           title: "Succes!",
-          text: `Provider ${provider.company} has been removed!`,
+          text: `${provider.company} Provider has been removed!`,
           icon: "success",
         });
       }

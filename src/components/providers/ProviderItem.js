@@ -11,7 +11,7 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
   const handleDelete = () => {
     Swal.fire({
       title: "Wait!",
-      text: "Are you sure you want to delete this Provider?",
+      text: `Are you sure you want to delete ${providerToShow.company} Provider?`,
       icon: "warning",
       showCancelButton: true,
       confirmButtonText: "Yes",
