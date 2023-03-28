@@ -25,7 +25,7 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
   };
 
   return (
-    <div className="bodyTable">
+    <div className="rowTable">
       <div
         style={{
           width: "90%",

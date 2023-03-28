@@ -43,14 +43,16 @@ export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
           {"There are not providers"}
         </div>
       ) : (
-        providerList.map((provider) => (
-          <ProviderItem
-            key={provider._id}
-            providerToShow={provider}
-            onDelete={onDelete}
-            onEdit={onEdit}
-          />
-        ))
+        <div className="bodyTable">
+          {providerList.map((provider) => (
+            <ProviderItem
+              key={provider._id}
+              providerToShow={provider}
+              onDelete={onDelete}
+              onEdit={onEdit}
+            />
+          ))}
+        </div>
       )}
     </div>
   );

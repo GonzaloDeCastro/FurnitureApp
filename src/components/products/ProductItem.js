@@ -25,7 +25,7 @@ export const ProductItem = ({ productToShow, onEdit }) => {
   };
 
   return (
-    <div className="bodyTable">
+    <div className="rowTable">
       <div
         style={{
           width: "90%",
