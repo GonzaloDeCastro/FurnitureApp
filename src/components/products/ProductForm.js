@@ -114,7 +114,9 @@ export const ProductForm = ({
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
-              {error === "empty name" && <p>Fill name field</p>}
+              {error === "empty name" && (
+                <p className="errors">Fill name field</p>
+              )}
               <input
                 type="text"
                 name="description"
@@ -123,7 +125,9 @@ export const ProductForm = ({
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
               />
-              {error === "empty description" && <p>Fill description field</p>}
+              {error === "empty description" && (
+                <p className="errors">Fill description field</p>
+              )}
               <input
                 type="number"
                 name="price"
@@ -132,7 +136,9 @@ export const ProductForm = ({
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
               />
-              {error === "empty price" && <p>Fill price field</p>}
+              {error === "empty price" && (
+                <p className="errors">Fill price field</p>
+              )}
               <input
                 type="text"
                 name="brand"
@@ -141,7 +147,9 @@ export const ProductForm = ({
                 onChange={(e) => setBrand(e.target.value)}
                 value={brand}
               />
-              {error === "empty brand" && <p>Fill brand field</p>}
+              {error === "empty brand" && (
+                <p className="errors">Fill brand field</p>
+              )}
               <button className="btn-success" type="submit" onClick={sendForm}>
                 Confirm
               </button>

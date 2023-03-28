@@ -117,7 +117,9 @@ export const ProviderForm = ({
               onChange={(e) => setCompany(e.target.value)}
               value={company}
             />
-            {error === "empty company" && <p>Fill company field</p>}
+            {error === "empty company" && (
+              <p className="errors">Fill company field</p>
+            )}
             <input
               type="text"
               name="firstname"
@@ -126,7 +128,9 @@ export const ProviderForm = ({
               onChange={(e) => setFirstName(e.target.value)}
               value={firstName}
             />
-            {error === "empty firstname" && <p>Fill Firstname field</p>}
+            {error === "empty firstname" && (
+              <p className="errors">Fill Firstname field</p>
+            )}
 
             <input
               type="text"
@@ -136,7 +140,9 @@ export const ProviderForm = ({
               onChange={(e) => setLastName(e.target.value)}
               value={lastName}
             />
-            {error === "empty lastname" && <p>Fill lastname field</p>}
+            {error === "empty lastname" && (
+              <p className="errors">Fill lastname field</p>
+            )}
             <input
               type="email"
               name="email"
@@ -145,7 +151,9 @@ export const ProviderForm = ({
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
-            {error === "empty email" && <p>Fill email field</p>}
+            {error === "empty email" && (
+              <p className="errors">Fill email field</p>
+            )}
             <input
               type="number"
               name="phone"
@@ -154,7 +162,9 @@ export const ProviderForm = ({
               onChange={(e) => setPhone(e.target.value)}
               value={phone}
             />
-            {error === "empty phone" && <p>Fill phone field</p>}
+            {error === "empty phone" && (
+              <p className="errors">Fill phone field</p>
+            )}
             <button className="btn-success" type="submit" onClick={sendForm}>
               Confirm
             </button>
