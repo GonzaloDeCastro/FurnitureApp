@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import validator from "validator";
 import { useForm } from "../../hooks/useForm";
-import { removeError, setError } from "../../redux/slices/ui";
-import { startLoginEmailPassword } from "../../redux/slices/auth";
+import { removeError, setError } from "../../redux/slices/uiSlice";
+import { startLoginEmailPassword } from "../../redux/slices/authSlice";
 
 export const LoginScreen = () => {
   const dispatch = useDispatch();
