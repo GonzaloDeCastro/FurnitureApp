@@ -12,16 +12,16 @@ export const product = createSlice({
   name: "product",
   initialState,
   reducers: {
+    creatorGetProducts: (state, action) => {
+      return {
+        ...state,
+        list: action.payload,
+      };
+    },
     creatorAddProduct: (state, action) => {
       return {
         ...state,
         list: [action.payload, ...state.list],
-      };
-    },
-    creatorRemoveProduct: (state, action) => {
-      return {
-        ...state,
-        list: state.list.filter((product) => product._id !== action.payload),
       };
     },
     creatorEditProduct: (state, action) => {
@@ -32,34 +32,37 @@ export const product = createSlice({
         ),
       };
     },
-    creatorGetProducts: (state, action) => {
+    creatorRemoveProduct: (state, action) => {
       return {
         ...state,
-        list: action.payload,
+        list: state.list.filter((product) => product._id !== action.payload),
       };
     },
   },
 });
 
-export const creatorAsyncDeleteProduct = (productId) => {
+export const {
+  creatorRemoveProduct,
+  creatorEditProduct,
+  creatorGetProducts,
+  creatorAddProduct,
+} = product.actions;
+
+export const creatorAsyncGetProducts = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.delete(
-        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${productId._id}`
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/all`
       );
-      console.log(response);
-      if (response.status === 202) {
-        const action = creatorRemoveProduct(productId._id);
+
+      if (response.status === 200) {
+        const action = creatorGetProducts(response.data.data);
         dispatch(action);
-        Swal.fire({
-          title: "Succes!",
-          text: `${productId.name} product has been deleted!`,
-          icon: "success",
-        });
       }
     } catch (error) {}
   };
 };
+
 export const creatorAsyncAddProduct = (product) => {
   return async (dispatch) => {
     try {
@@ -108,25 +111,25 @@ export const creatorAsyncEditProduct = (product) => {
     } catch (error) {}
   };
 };
-export const creatorAsyncGetProducts = () => {
+
+export const creatorAsyncDeleteProduct = (productId) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/all`
+      const response = await axios.delete(
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${productId._id}`
       );
-
-      if (response.status === 200) {
-        const action = creatorGetProducts(response.data.data);
+      console.log(response);
+      if (response.status === 202) {
+        const action = creatorRemoveProduct(productId._id);
         dispatch(action);
+        Swal.fire({
+          title: "Succes!",
+          text: `${productId.name} product has been deleted!`,
+          icon: "success",
+        });
       }
     } catch (error) {}
   };
 };
 
-export const {
-  creatorRemoveProduct,
-  creatorEditProduct,
-  creatorGetProducts,
-  creatorAddProduct,
-} = product.actions;
 export default product.reducer;

@@ -12,16 +12,17 @@ export const provider = createSlice({
   name: "provider",
   initialState,
   reducers: {
+    creatorGetProviders: (state, action) => {
+      return {
+        ...state,
+        list: action.payload,
+      };
+    },
+
     creatorAddProvider: (state, action) => {
       return {
         ...state,
         list: [action.payload, ...state.list],
-      };
-    },
-    creatorRemoveProvider: (state, action) => {
-      return {
-        ...state,
-        list: state.list.filter((product) => product._id !== action.payload),
       };
     },
     creatorEditProvider: (state, action) => {
@@ -32,10 +33,10 @@ export const provider = createSlice({
         ),
       };
     },
-    creatorGetProviders: (state, action) => {
+    creatorRemoveProvider: (state, action) => {
       return {
         ...state,
-        list: action.payload,
+        list: state.list.filter((product) => product._id !== action.payload),
       };
     },
   },
@@ -47,6 +48,21 @@ export const {
   creatorGetProviders,
   creatorAddProvider,
 } = provider.actions;
+
+export const creatorAsyncGetProviders = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/all`
+      );
+
+      if (res.status === 200) {
+        const action = creatorGetProviders(res.data.data);
+        dispatch(action);
+      }
+    } catch (error) {}
+  };
+};
 
 export const creatorAsyncAddProvider = (provider) => {
   return async (dispatch) => {
@@ -75,26 +91,6 @@ export const creatorAsyncAddProvider = (provider) => {
   };
 };
 
-export const creatorAsyncDeleteProvider = (provider) => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.delete(
-        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${provider._id}`
-      );
-
-      if (res.status === 202) {
-        const action = creatorRemoveProvider(provider._id);
-        dispatch(action);
-        Swal.fire({
-          title: "Succes!",
-          text: `${provider.company} Provider has been removed!`,
-          icon: "success",
-        });
-      }
-    } catch (error) {}
-  };
-};
-
 export const creatorAsyncEditProvider = (provider) => {
   return async (dispatch) => {
     try {
@@ -116,16 +112,22 @@ export const creatorAsyncEditProvider = (provider) => {
     }
   };
 };
-export const creatorAsyncGetProviders = () => {
+
+export const creatorAsyncDeleteProvider = (provider) => {
   return async (dispatch) => {
     try {
-      const res = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/all`
+      const res = await axios.delete(
+        `${process.env.REACT_APP_BACKEND_URL_PORT}/api/providers/${provider._id}`
       );
 
-      if (res.status === 200) {
-        const action = creatorGetProviders(res.data.data);
+      if (res.status === 202) {
+        const action = creatorRemoveProvider(provider._id);
         dispatch(action);
+        Swal.fire({
+          title: "Succes!",
+          text: `${provider.company} Provider has been removed!`,
+          icon: "success",
+        });
       }
     } catch (error) {}
   };
