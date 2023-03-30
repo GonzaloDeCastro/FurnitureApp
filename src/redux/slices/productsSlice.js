@@ -42,10 +42,10 @@ export const product = createSlice({
 });
 
 export const {
-  creatorRemoveProduct,
-  creatorEditProduct,
   creatorGetProducts,
   creatorAddProduct,
+  creatorEditProduct,
+  creatorRemoveProduct,
 } = product.actions;
 
 export const creatorAsyncGetProducts = () => {
@@ -70,7 +70,6 @@ export const creatorAsyncAddProduct = (product) => {
         `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products`,
         product
       );
-      console.log(response);
       if (response.status === 201) {
         const action = creatorAddProduct(response.data.dato);
         dispatch(action);
@@ -98,7 +97,6 @@ export const creatorAsyncEditProduct = (product) => {
 
         product
       );
-      console.log(response);
       if (response.status === 200) {
         const action = creatorEditProduct(response.data);
         dispatch(action);
@@ -118,7 +116,6 @@ export const creatorAsyncDeleteProduct = (productId) => {
       const response = await axios.delete(
         `${process.env.REACT_APP_BACKEND_URL_PORT}/api/products/${productId._id}`
       );
-      console.log(response);
       if (response.status === 202) {
         const action = creatorRemoveProduct(productId._id);
         dispatch(action);

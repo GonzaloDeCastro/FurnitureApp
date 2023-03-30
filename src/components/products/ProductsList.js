@@ -1,4 +1,3 @@
-import React from "react";
 import { ProductItem } from "./ProductItem";
 
 export const ProductsList = ({ productList, onDelete, onEdit }) => {
@@ -22,7 +21,7 @@ export const ProductsList = ({ productList, onDelete, onEdit }) => {
           <div className="titleFieldProduct">Brand</div>
         </div>
 
-        <div>Options</div>
+        <div className="optionItem">Options</div>
       </div>
       {productList.length === 0 ? (
         <div

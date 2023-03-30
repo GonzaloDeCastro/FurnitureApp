@@ -13,16 +13,6 @@
   margin-top: 10%;
 }
 
-.delete,
-.edit:hover {
-  cursor: pointer;
-}
-
-.Edit_Delete {
-  display: flex;
-  justify-content: space-around;
-}
-
 .headerTable {
   display: flex;
   background: #7c3494;
@@ -32,12 +22,12 @@
 }
 
 .titleFieldProvider {
-  width: 18%;
+  width: 20%;
   padding-left: 0.5rem;
 }
 
 .fieldProvider {
-  width: 18%;
+  width: 20%;
   padding-left: 0.5rem;
 }
 .titleFieldProduct {
@@ -59,6 +49,12 @@
   margin-top: 0.5rem;
   background: #d4abdf;
   border-radius: 5px;
+  align-items: center;
+}
+
+.optionItem {
+  display: flex;
+  width: 10%;
 }
 
 @media screen and (max-width: 800px) {
@@ -77,15 +73,35 @@
     margin: 1rem 0rem 0rem 0rem;
     width: 98%;
   }
+  .bodyTable {
+    height: 200px;
+  }
   .rowTable {
-    width: 98%;
+    width: 99%;
   }
   .headerTable {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
   }
-  .bodyTable {
-    height: 200px;
-    overflow: auto;
+  .titleFieldProvider {
+    font-size: 12px;
+  }
+  .titleFieldProduct {
+    font-size: 12px;
+  }
+  .fieldProvider {
+    font-size: 10px;
+  }
+  .fieldProduct {
+    font-size: 12px;
+  }
+  .optionContainer {
+    width: 14%;
+    display: flex;
+  }
+
+  .optionItem {
+    font-size: 10px;
+    margin-left: 0rem;
   }
 }

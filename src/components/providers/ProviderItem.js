@@ -30,6 +30,7 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
         style={{
           width: "90%",
           display: "flex",
+          flexWrap: "wrap",
         }}
       >
         <div className="fieldProvider">{providerToShow.company}</div>
@@ -38,21 +39,10 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
         <div className="fieldProvider">{providerToShow.phone}</div>
         <div className="fieldProvider">{providerToShow.email}</div>
       </div>
-      <div
-        style={{
-          width: "10%",
-          display: "flex",
-        }}
-      >
-        <EditIcon
-          onClick={() => onEdit(providerToShow)}
-          style={{ cursor: "pointer", color: "#944ca8", marginRight: "1rem" }}
-        />
+      <div className="optionContainer">
+        <EditIcon onClick={() => onEdit(providerToShow)} className="editIcon" />
 
-        <DeleteIcon
-          onClick={handleDelete}
-          style={{ cursor: "pointer", color: "#7c3494" }}
-        />
+        <DeleteIcon onClick={handleDelete} className="deleteIcon" />
       </div>
     </div>
   );

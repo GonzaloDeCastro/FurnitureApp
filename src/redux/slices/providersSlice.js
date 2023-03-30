@@ -43,10 +43,10 @@ export const provider = createSlice({
 });
 
 export const {
-  creatorRemoveProvider,
-  creatorEditProvider,
   creatorGetProviders,
   creatorAddProvider,
+  creatorEditProvider,
+  creatorRemoveProvider,
 } = provider.actions;
 
 export const creatorAsyncGetProviders = () => {
@@ -108,7 +108,7 @@ export const creatorAsyncEditProvider = (provider) => {
         return dispatch(creatorEditProvider(res.data));
       }
     } catch (error) {
-      console.log("entro en error", error);
+      console.log(error);
     }
   };
 };

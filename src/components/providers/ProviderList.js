@@ -22,14 +22,7 @@ export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
           <div className="titleFieldProvider">Email</div>
         </div>
 
-        <div
-          style={{
-            display: "flex",
-            width: "10%",
-          }}
-        >
-          Options
-        </div>
+        <div className="optionItem">Options</div>
       </div>
 
       {providerList.length === 0 ? (

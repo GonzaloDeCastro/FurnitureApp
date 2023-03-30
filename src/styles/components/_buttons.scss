@@ -1,35 +1,55 @@
 .btn {
-	background-color: transparent;
-	border: none;
-	color: white;
-	cursor: pointer;
-	font-size: 15px;
-	padding: 4px 10px 4px 10px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 4px 10px 4px 10px;
 
-	transition: color 0.3s ease;
+  transition: color 0.3s ease;
 
-	&:focus {
-		outline: none;
-	}
+  &:focus {
+    outline: none;
+  }
 
-	&:hover {
-		color: darken($color: white, $amount: 10);
-	}
+  &:hover {
+    color: darken($color: white, $amount: 10);
+  }
 }
 
 .btn-primary {
-	background-color: $primary;
-	border-radius: 2px;
+  background-color: $primary;
+  border-radius: 2px;
 
-	&:disabled {
-		background-color: lighten($color: $primary, $amount: 15);
-	}
+  &:disabled {
+    background-color: lighten($color: $primary, $amount: 15);
+  }
 
-	&:hover {
-		background-color: darken($color: $primary, $amount: 15);
-	}
+  &:hover {
+    background-color: darken($color: $primary, $amount: 15);
+  }
 }
 
 .btn-block {
-	width: 100%;
+  width: 100%;
+}
+.editIcon {
+  cursor: pointer;
+  color: #944ca8;
+  margin-left: 1rem;
+}
+
+.deleteIcon {
+  cursor: pointer;
+  color: #944ca8;
+}
+
+@media screen and (max-width: 667px) {
+  .editIcon {
+    width: 18px !important;
+  }
+
+  .deleteIcon {
+    width: 18px !important;
+  }
 }

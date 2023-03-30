@@ -37,21 +37,9 @@ export const ProductItem = ({ productToShow, onEdit }) => {
         <div className="fieldProduct">${productToShow.price}</div>
         <div className="fieldProduct">{productToShow.brand}</div>
       </div>
-      <div
-        style={{
-          width: "10%",
-          display: "flex",
-        }}
-      >
-        <EditIcon
-          onClick={() => onEdit(productToShow)}
-          style={{ cursor: "pointer", color: "#944ca8" }}
-        />
-
-        <DeleteIcon
-          onClick={handleDelete}
-          style={{ cursor: "pointer", color: "#7c3494" }}
-        />
+      <div className="optionContainer">
+        <EditIcon onClick={() => onEdit(productToShow)} className="editIcon" />
+        <DeleteIcon onClick={handleDelete} className="deleteIcon" />
       </div>
     </div>
   );
