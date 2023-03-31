@@ -16,8 +16,7 @@ export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
           }}
         >
           <div className="titleFieldProvider">Company</div>
-          <div className="titleFieldProvider">Firstname</div>
-          <div className="titleFieldProvider">Lastname</div>
+          <div className="titleFieldProvider">Name</div>
           <div className="titleFieldProvider">Phone</div>
           <div className="titleFieldProvider">Email</div>
         </div>

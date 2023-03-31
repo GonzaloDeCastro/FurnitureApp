@@ -97,7 +97,7 @@ export const ProductForm = ({
 
   return (
     <>
-      <Modal show={showModal} onHide={handleClose} className="modal__product">
+      <Modal show={showModal} onHide={handleClose} className="modal__add__edit">
         <div className="modal-content">
           <Modal.Header closeButton>
             <Modal.Title>

@@ -16,10 +16,8 @@ export const ProviderForm = ({
   const dispatch = useDispatch();
 
   const [company, setCompany] = useState(provider ? provider.company : "");
-  const [firstName, setFirstName] = useState(
-    provider ? provider.firstName : ""
-  );
-  const [lastName, setLastName] = useState(provider ? provider.lastName : "");
+  const [name, setName] = useState(provider ? provider.name : "");
+
   const [email, setEmail] = useState(provider ? provider.email : "");
   const [phone, setPhone] = useState(provider ? provider.phone : "");
   const [showModal, setShowModal] = useState(false);
@@ -42,7 +40,7 @@ export const ProviderForm = ({
     event.preventDefault();
     if (error === false) {
       if (type === "add") {
-        const provider = { company, firstName, lastName, email, phone };
+        const provider = { company, name, email, phone };
         const action = creatorAsyncAddProvider(provider);
         dispatch(action);
       }
@@ -50,8 +48,7 @@ export const ProviderForm = ({
         const payloadProvider = {
           id: provider._id,
           company,
-          firstName,
-          lastName,
+          name,
           email,
           phone,
         };
@@ -59,8 +56,7 @@ export const ProviderForm = ({
         dispatch(action);
       }
       setCompany("");
-      setFirstName("");
-      setLastName("");
+      setName("");
       setEmail("");
       setPhone("");
       handleClose();
@@ -69,8 +65,8 @@ export const ProviderForm = ({
 
   useEffect(() => {
     setCompany(provider ? provider.company : "");
-    setFirstName(provider ? provider.firstName : "");
-    setLastName(provider ? provider.lastName : "");
+    setName(provider ? provider.name : "");
+
     setEmail(provider ? provider.email : "");
     setPhone(provider ? provider.phone : "");
   }, [provider]);
@@ -85,10 +81,8 @@ export const ProviderForm = ({
     if (send) {
       if (company.length === 0) {
         setError("empty company");
-      } else if (firstName.length === 0) {
-        setError("empty firstname");
-      } else if (lastName.length === 0) {
-        setError("empty lastname");
+      } else if (name.length === 0) {
+        setError("empty name");
       } else if (email.length === 0) {
         setError("empty email");
       } else if (phone.length === 0) {
@@ -101,7 +95,7 @@ export const ProviderForm = ({
 
   return (
     <>
-      <Modal show={showModal} onHide={handleClose} className="modal__provider">
+      <Modal show={showModal} onHide={handleClose} className="modal__add__edit">
         <Modal.Header closeButton>
           <Modal.Title>
             {type === "add" ? "Add Provider" : "Edit Provider"}
@@ -122,27 +116,16 @@ export const ProviderForm = ({
             )}
             <input
               type="text"
-              name="firstname"
-              placeholder="Firstname"
+              name="name"
+              placeholder="Name"
               className="form-control mb-3"
-              onChange={(e) => setFirstName(e.target.value)}
-              value={firstName}
+              onChange={(e) => setName(e.target.value)}
+              value={name}
             />
-            {error === "empty firstname" && (
-              <p className="errors">Fill Firstname field</p>
+            {error === "empty name" && (
+              <p className="errors">Fill Name field</p>
             )}
 
-            <input
-              type="text"
-              name="lastname"
-              placeholder="Lastname"
-              className="form-control mb-3"
-              onChange={(e) => setLastName(e.target.value)}
-              value={lastName}
-            />
-            {error === "empty lastname" && (
-              <p className="errors">Fill lastname field</p>
-            )}
             <input
               type="email"
               name="email"

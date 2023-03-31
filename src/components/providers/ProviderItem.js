@@ -34,8 +34,7 @@ export const ProviderItem = ({ providerToShow, onEdit }) => {
         }}
       >
         <div className="fieldProvider">{providerToShow.company}</div>
-        <div className="fieldProvider">{providerToShow.firstName}</div>
-        <div className="fieldProvider">{providerToShow.lastName}</div>
+        <div className="fieldProvider">{providerToShow.name}</div>
         <div className="fieldProvider">{providerToShow.phone}</div>
         <div className="fieldProvider">{providerToShow.email}</div>
       </div>

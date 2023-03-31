@@ -1,19 +1,12 @@
-.modal__product {
-  width: 100%;
-}
-.modal__provider {
+.modal__add__edit {
   width: 100%;
 }
 
 @media screen and (max-width: 667px) {
-  .modal__product {
+  .modal__add__edit {
     display: flex;
     justify-content: center;
-    width: 70%;
+    width: 80%;
     margin-left: 10%;
-  }
-  .modal__provider {
-    margin-left: 3%;
-    width: 70%;
   }
 }
