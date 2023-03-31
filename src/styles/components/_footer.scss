@@ -2,6 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
+  height: 6%;
   background-color: darken($color: $primary, $amount: 15);
   color: antiquewhite;
+}
+
+@media screen and (max-width: 667px) {
+  .footer2 {
+    height: 3rem;
+  }
 }
