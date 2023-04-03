@@ -54,4 +54,4 @@ We start the server with the command "npm start"
 Enjoy the App
 ```
 
-7. Try my App in Render, click [Here](https://furnitureapp.onrender.com)
+7. Try my App in Vercel, click [Here](https://furniture-app-weld.vercel.app)
