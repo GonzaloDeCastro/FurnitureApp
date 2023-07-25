@@ -36,7 +36,7 @@ We install the necessary packages to be able to run the system with "npm install
 4. create file ".env" in your root folder with the following content
 
 ```
-REACT_APP_BACKEND_URL_PORT = https://furnitureapi.onrender.com
+REACT_APP_BACKEND_URL_PORT = https://furniture-app-backend.vercel.app
 
 
 this is my backend in node ;)
