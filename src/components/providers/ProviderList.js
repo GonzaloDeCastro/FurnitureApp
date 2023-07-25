@@ -3,7 +3,6 @@ import { ProviderItem } from "./ProviderItem";
 
 export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
   const [searchText, setSearchText] = useState("");
-  console.log("gonza ", providerList);
   const handleSearch = (event) => {
     setSearchText(event.target.value);
   };
