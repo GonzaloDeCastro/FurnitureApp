@@ -39,7 +39,7 @@ export const Products = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: "0.3rem" }}>
       <Header
         showProductForm={showForm}
         setShowProductForm={setShowForm}

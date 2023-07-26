@@ -46,7 +46,7 @@ export const Providers = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginLeft: "0.3rem" }}>
       <Header
         showProviderForm={showForm}
         setShowProviderForm={setShowForm}
