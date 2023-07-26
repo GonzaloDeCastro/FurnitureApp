@@ -55,4 +55,3 @@ Enjoy the App
 ```
 
 7. Try my App in Vercel, click [Here](https://furniture-app-vdu3-naebtkx7g-gonzamdc.vercel.app/)
-8. 
