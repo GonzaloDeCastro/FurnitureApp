@@ -20,7 +20,7 @@
 .btn-primary {
   background: linear-gradient(to bottom, #9c8662, #7c5c3e);
   border-radius: 2px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s;
 
   &:disabled {
@@ -39,21 +39,21 @@
   cursor: pointer;
   color: #944ca8;
 
-  transition: color 0.3s; /* Transición suave para cambios de color */
+  transition: color 0.3s;
 }
 
 .editIcon:hover {
-  color: #6b2d72; /* Cambia el color al pasar el ratón por encima */
+  color: #6b2d72;
 }
 
 .deleteIcon {
   cursor: pointer;
   color: #944ca8;
 
-  transition: color 0.3s; /* Transición suave para cambios de color */
+  transition: color 0.3s;
 }
 .deleteIcon:hover {
-  color: #6b2d72; /* Cambia el color al pasar el ratón por encima */
+  color: #6b2d72;
 }
 
 @media screen and (max-width: 667px) {
