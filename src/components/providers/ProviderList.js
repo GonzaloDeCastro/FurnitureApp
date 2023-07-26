@@ -15,11 +15,12 @@ export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
   return (
     <div>
       <input
+        className="input-search"
         style={{ marginTop: "10px" }}
         type="text"
         onChange={handleSearch}
         value={searchText}
-        placeholder="Search provider"
+        placeholder="Search provider 🔍"
       />
       <div
         style={{

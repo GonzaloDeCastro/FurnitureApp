@@ -12,7 +12,9 @@
   align-items: center;
   height: 50px;
   width: 100%;
-  background-color: darken($color: $secondary, $amount: 20);
+  background: radial-gradient(#8f7c58, #ab9f87);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
 }
 
 @media screen and (max-width: 800px) {

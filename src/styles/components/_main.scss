@@ -5,7 +5,7 @@
   width: 100vw;
 }
 .main__sidebar {
-  background-color: $primary;
+  background-color: darken($primary, 10);
   color: white;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,7 @@
 }
 
 .main_menu_sidebar-navbar {
-  margin-top: 30%;
-  height: 40%;
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

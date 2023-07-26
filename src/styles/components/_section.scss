@@ -17,7 +17,7 @@
 
 .headerTable {
   display: flex;
-  background: #7c3494;
+  background: linear-gradient(to bottom, #7c3494, #6a297d);
   color: #fff;
   margin-top: 0.5rem;
   border-radius: 5px;
@@ -49,7 +49,7 @@
 .rowTable {
   display: flex;
   margin-top: 0.5rem;
-  background: #d4abdf;
+  background: linear-gradient(to bottom, #d4abdf, #b791bf);
   border-radius: 5px;
   align-items: center;
 }

@@ -18,10 +18,11 @@ export const ProductsList = ({ productList, onDelete, onEdit }) => {
     <div>
       <input
         style={{ marginTop: "10px" }}
+        className="input-search"
         type="text"
         onChange={handleSearch}
         value={searchText}
-        placeholder="Search product"
+        placeholder="Search product 🔍"
       />
       <div
         style={{

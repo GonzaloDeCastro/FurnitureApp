@@ -18,8 +18,10 @@
 }
 
 .btn-primary {
-  background-color: $primary;
+  background: linear-gradient(to bottom, #9c8662, #7c5c3e);
   border-radius: 2px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efecto de sombra */
+  transition: box-shadow 0.3s;
 
   &:disabled {
     background-color: lighten($color: $primary, $amount: 15);
@@ -36,12 +38,22 @@
 .editIcon {
   cursor: pointer;
   color: #944ca8;
-  margin-left: 1rem;
+
+  transition: color 0.3s; /* Transición suave para cambios de color */
+}
+
+.editIcon:hover {
+  color: #6b2d72; /* Cambia el color al pasar el ratón por encima */
 }
 
 .deleteIcon {
   cursor: pointer;
   color: #944ca8;
+
+  transition: color 0.3s; /* Transición suave para cambios de color */
+}
+.deleteIcon:hover {
+  color: #6b2d72; /* Cambia el color al pasar el ratón por encima */
 }
 
 @media screen and (max-width: 667px) {
@@ -51,5 +63,23 @@
 
   .deleteIcon {
     width: 18px !important;
+  }
+}
+
+.input-search {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+
+  ::placeholder {
+    color: #888;
+  }
+
+  :focus {
+    outline: none;
+    border-color: #6f7c58;
+    box-shadow: 0 0 4px rgba(111, 124, 88, 0.4);
   }
 }
