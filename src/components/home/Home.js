@@ -7,7 +7,7 @@ export const Home = () => {
 
       <p>
         In this amazing system, you have the power to add, delete, and modify
-        both suppliers and products! 😎
+        both suppliers and products!😎
       </p>
       <p>
         Once you're registered, a world of possibilities opens up! You can
