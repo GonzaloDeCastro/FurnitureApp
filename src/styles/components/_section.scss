@@ -10,9 +10,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 3%;
   height: 500px;
   overflow: auto;
+  color: #6b5738;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .headerTable {
@@ -75,9 +78,7 @@
     margin: 1rem 0rem 0rem 0rem;
     width: 98%;
   }
-  .homeContainer {
-    height: 300px;
-  }
+
   .bodyTable {
     height: 200px;
   }

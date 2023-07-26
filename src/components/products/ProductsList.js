@@ -22,7 +22,7 @@ export const ProductsList = ({ productList, onDelete, onEdit }) => {
         type="text"
         onChange={handleSearch}
         value={searchText}
-        placeholder="Search product 🔍"
+        placeholder="Search product"
       />
       <div
         style={{

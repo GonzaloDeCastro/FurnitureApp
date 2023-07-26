@@ -13,7 +13,7 @@ export const Header = (props) => {
 
   return (
     <div>
-      <h4>Providers</h4>
+      <div className="headerSection">Providers</div>
       <button
         className="btn btn-primary"
         onClick={() =>

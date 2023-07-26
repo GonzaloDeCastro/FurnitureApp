@@ -54,4 +54,4 @@ We start the server with the command "npm start"
 Enjoy the App
 ```
 
-7. Try my App in Vercel, click [Here](https://furniture-gc0n8smja-gonzamdc.vercel.app)
+7. Try my App in Vercel, click [Here](https://furniture-app-vdu3.vercel.app)

@@ -20,7 +20,7 @@ export const ProvidersList = ({ providerList, onDelete, onEdit }) => {
         type="text"
         onChange={handleSearch}
         value={searchText}
-        placeholder="Search provider 🔍"
+        placeholder="Search provider"
       />
       <div
         style={{

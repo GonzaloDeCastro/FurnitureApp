@@ -7,3 +7,17 @@
   color: antiquewhite;
   height: 10%;
 }
+
+.headerSection {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  background-image: linear-gradient(
+    to top,
+    hsl(30, 50%, 90%),
+    hsl(30, 50%, 80%)
+  );
+  color: #6b5738;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

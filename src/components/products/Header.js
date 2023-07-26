@@ -10,7 +10,7 @@ export const Header = ({
 }) => {
   return (
     <div>
-      <h4>Products</h4>
+      <div className="headerSection">Products</div>
       <button
         className="btn btn-primary"
         onClick={() =>

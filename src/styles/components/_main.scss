@@ -3,6 +3,8 @@
   flex-direction: column;
   height: 95%;
   width: 100vw;
+  background-image: linear-gradient(to bottom, hsl(30, 50%, 90%), #fff);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
 }
 .main__sidebar {
   background-color: darken($primary, 10);
